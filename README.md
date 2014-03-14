@@ -13,8 +13,10 @@ There are three files in this repository:
   The schema for this metadata can be found
   [here](http://ukedc.rl.ac.uk/format.html).
 * **ukpd_nilm_metadata.yaml** is the detailed metadata describing each
-  appliance and meter.  This is the 'minimal' version which has not
-  been merged ('concatenated') with the objects stored in the
+  appliance and meter using the schema defined by the
+  [nilm_metadata](https://github.com/nilmtk/nilm_metadata) project.
+  This file is the 'minimal' version which has not been merged
+  ('concatenated') with the objects stored in the
   [nilm_metadata](https://github.com/nilmtk/nilm_metadata) project.
 * **ukpd_nilm_metadata_concatenated.yaml** contains all the info from
   the file above as well as all the related info from the
