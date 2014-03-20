@@ -6,7 +6,7 @@ buildings:
     kettle, toaster, lcd_office, hifi_office, livingroom_s_lamp, soldering_iron, gigE_&_USBhub,
     hoover, iPad_charger, utilityrm_lamp, hair_dryer, straighteners, iron, childs_ds_lamp,
     office_lamp3, office_pc, gigE_switch'
-  geo_location: &id008 {country: GB, latitude: 51.464462, locality: London, longitude: -0.076544}
+  geo_location: &id009 {country: GB, latitude: 51.464462, locality: London, longitude: -0.076544}
   rooms:
   - {floor: 0, name: lounge}
   - {floor: 0, instance: 1, name: hall}
@@ -52,7 +52,7 @@ buildings:
           - distance: 4
             model: {distribution_name: normal, mu: 73, sigma: 12}
           room:
-          - &id015
+          - &id016
             distance: 3
             distribution_of_data:
               categories: [bathroom, utility, kitchen]
@@ -168,7 +168,7 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - &id001
+          - &id002
             distance: 4
             distribution_of_data:
               categories: [kitchen, utility, basement, garage]
@@ -194,13 +194,17 @@ buildings:
             volume: {description: litres, type: number}
           distributions:
             on_power:
-            - &id009
-              model: {distribution_name: summary stats, max: 2500, min: 1800, reference: 'P.
-                  D. R. Stamminger, Synergy potential of smart appliances,  in smart
-                  domestic appliances in sustainable energy systems (Smart-A), University
-                  of Bonn, Tech. Rep., 2008.
+            - &id010
+              model:
+                distribution_name: summary stats
+                max: 2500
+                min: 1800
+                related_documents: &id001 ['P. D. R. Stamminger, Synergy potential
+                    of smart appliances,  in smart domestic appliances in sustainable
+                    energy systems (Smart-A), University of Bonn, Tech. Rep., 2008.
 
-                  ', source: empirical from publication}
+                    ']
+                source: empirical from publication
               specific_to: {country: GB}
           instance: 1
           name: electric water heater
@@ -213,17 +217,13 @@ buildings:
         control: [manual]
         distributions:
           on_duration:
-          - &id010
+          - &id011
             distance: 3
             model: {distribution_name: summary stats, max: 10800, mean: 4500, min: 900}
-            reference: 'P. D. R. Stamminger, Synergy potential of smart appliances,  in
-              smart domestic appliances in sustainable energy systems (Smart-A), University
-              of Bonn, Tech. Rep., 2008.
-
-              '
+            related_documents: *id001
             source: empirical from publication
           rooms:
-          - *id001
+          - *id002
         instance: 1
         manufacturer: Whirlpool / Ikea
         meter_ids: [6]
@@ -264,7 +264,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - &id003
+          - &id004
             distance: 3
             distribution_of_data:
               categories: [lounge, bedroom, kitchen]
@@ -380,7 +380,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - &id002
+          - &id003
             distance: 3
             distribution_of_data:
               categories: [kitchen, utility]
@@ -401,7 +401,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         manufacturer: Breville
         meter_ids: [10]
@@ -418,7 +418,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [10]
         name: toasted sandwich maker
@@ -434,7 +434,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [11]
         name: toaster
@@ -450,7 +450,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         manufacturer: Artisan
         meter_ids: [11]
@@ -466,7 +466,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 2
         manufacturer: Kenwood
         meter_ids: [11]
@@ -500,7 +500,7 @@ buildings:
           parent: compressor
         distributions:
           rooms:
-          - &id011
+          - &id012
             distance: 4
             distribution_of_data:
               categories: [kitchen, utility, basement, garage]
@@ -522,7 +522,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [13]
         name: microwave
@@ -581,13 +581,13 @@ buildings:
               traditional: consumer electronics
             distributions:
               rooms:
-              - *id003
+              - *id004
             instance: 1
             name: DAC
             parent: DAC
           distributions:
             rooms:
-            - *id003
+            - *id004
           instance: 1
           name: audio amplifier
           parent: audio amplifier
@@ -599,7 +599,7 @@ buildings:
             traditional: consumer electronics
           distributions:
             rooms:
-            - *id003
+            - *id004
           instance: 1
           name: radio
           parent: radio
@@ -610,14 +610,14 @@ buildings:
             traditional: consumer electronics
           distributions:
             rooms:
-            - *id003
+            - *id004
           instance: 1
           name: CD player
           parent: CD player
           year_of_purchase: 1995
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [15]
         name: audio system
@@ -644,7 +644,7 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [16]
         name: breadmaker
@@ -658,7 +658,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [17]
         name: audio amplifier
@@ -841,7 +841,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [28]
         name: active subwoofer
@@ -876,7 +876,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [30]
         name: radio
@@ -922,7 +922,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 2
         meter_ids: [32]
         name: audio system
@@ -997,7 +997,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [36]
         name: coffee maker
@@ -1011,7 +1011,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 2
         meter_ids: [37]
         name: radio
@@ -1041,7 +1041,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 2
         meter_ids: [38]
         name: baby monitor
@@ -1057,7 +1057,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 3
         meter_ids: [38]
         name: radio
@@ -1108,7 +1108,7 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - *id002
+          - *id003
         fuel: natural gas
         instance: 1
         meter_ids: [42]
@@ -1204,7 +1204,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [46]
         name: baby monitor
@@ -1355,7 +1355,7 @@ buildings:
           11th August 2013
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [0]
         name: security alarm
@@ -1421,12 +1421,12 @@ buildings:
         original_name: lighting_circuit
         parent: light
         usual_components: [dimmer, lamp]
-      mains_voltage: &id012 {nominal: 230, tolerance_lower_bound: 10, tolerance_upper_bound: 6}
+      mains_voltage: &id013 {nominal: 230, tolerance_lower_bound: 10, tolerance_upper_bound: 6}
       meters:
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_1.dat
-        data_logger: &id004
+        data_logger: &id005
           creators: [Jack Kelly]
           model: rfm_ecomanager_logger
           model_url: https://github.com/JackKelly/rfm_ecomanager_logger
@@ -1435,7 +1435,7 @@ buildings:
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - &id013 {cummulative: false, maximum: 25000, minimum: 0, physical_quantity: power,
+        - &id014 {cummulative: false, maximum: 25000, minimum: 0, physical_quantity: power,
           type: apparent}
         meter_id: 1
         model: EcoManager Whole House Transmitter
@@ -1446,17 +1446,17 @@ buildings:
         seller: EDF Energy
         site_meter: true
         wireless: true
-        wireless_base: &id005
+        wireless_base: &id006
           creators: [Jack Kelly]
           model: rfm_edf_ecomanager
           model_url: https://github.com/JackKelly/rfm_edf_ecomanager/
       - data_location: house_1/channel_2.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:14:57+00:00', start: '2012-11-09T22:28:23+00:00'}
         manufacturer: Current Cost
         max_sample_period: 120
-        measurements: &id006
+        measurements: &id007
         - {cummulative: false, maximum: 25000, minimum: 0, physical_quantity: power,
           type: apparent}
         meter_id: 2
@@ -1467,14 +1467,14 @@ buildings:
         sample_period: 6
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - data_location: house_1/channel_3.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:14:57+00:00', start: '2012-11-09T22:28:35+00:00'}
         manufacturer: Current Cost
         max_sample_period: 120
-        measurements: *id006
+        measurements: *id007
         meter_id: 3
         model: Transmitter
         model_url: http://www.currentcost.com/product-transmitter.html
@@ -1483,17 +1483,17 @@ buildings:
         sample_period: 6
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_4.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:18+00:00', start: '2012-11-16T11:29:01+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - &id007 {cummulative: false, maximum: 3300, minimum: 0, physical_quantity: power,
+        - &id008 {cummulative: false, maximum: 3300, minimum: 0, physical_quantity: power,
           type: active}
         meter_id: 4
         model: EcoManager Transmitter Plug
@@ -1504,17 +1504,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_5.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:55+00:00', start: '2012-11-09T22:28:18+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 5
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1524,17 +1524,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_6.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:16:02+00:00', start: '2012-11-09T22:28:18+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 6
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1544,17 +1544,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_7.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:56+00:00', start: '2012-11-09T22:28:18+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 7
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1564,14 +1564,14 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - data_location: house_1/channel_8.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:16:04+00:00', start: '2012-11-12T18:24:46+00:00'}
         manufacturer: Current Cost
         max_sample_period: 120
-        measurements: *id006
+        measurements: *id007
         meter_id: 8
         model: Transmitter
         model_url: http://www.currentcost.com/product-transmitter.html
@@ -1580,17 +1580,17 @@ buildings:
         sample_period: 6
         submeter_of: 25
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_9.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:16:02+00:00', start: '2012-12-14T22:21:32+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 9
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1600,17 +1600,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_10.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:14:56+00:00', start: '2012-11-09T22:28:18+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 10
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1620,17 +1620,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_11.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:05+00:00', start: '2012-12-14T22:21:32+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 11
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1646,17 +1646,17 @@ buildings:
           both the hoover and kettle sensor would have recorded the same appliance
           for a few hours).
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_12.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:04+00:00', start: '2012-12-14T22:21:32+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 12
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1666,17 +1666,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_13.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:08+00:00', start: '2012-12-14T22:21:33+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 13
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1686,17 +1686,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_14.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:13+00:00', start: '2012-12-14T22:21:33+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 14
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1706,17 +1706,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_15.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:13+00:00', start: '2012-12-14T22:21:33+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 15
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1726,17 +1726,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_16.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:14+00:00', start: '2012-12-14T22:21:33+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 16
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1746,17 +1746,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_17.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:14+00:00', start: '2012-12-14T22:21:32+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 17
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1766,17 +1766,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_18.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:12+00:00', start: '2012-12-14T22:21:32+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 18
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1786,17 +1786,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_19.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:13+00:00', start: '2013-02-12T16:19:53+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 19
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1806,17 +1806,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_20.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-22T15:39:47+01:00', start: '2013-02-12T16:19:52+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 20
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1826,17 +1826,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_21.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:11+00:00', start: '2013-02-12T16:19:53+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 21
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1846,17 +1846,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_22.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-08T19:25:25+00:00', start: '2013-02-14T20:57:12+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 22
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1866,17 +1866,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_23.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:17+00:00', start: '2013-02-12T16:19:54+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 23
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1886,17 +1886,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_24.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:20+00:00', start: '2013-02-12T16:19:53+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 24
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1906,14 +1906,14 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - data_location: house_1/channel_25.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:26+00:00', start: '2013-03-12T10:59:44+00:00'}
         manufacturer: Current Cost
         max_sample_period: 120
-        measurements: *id006
+        measurements: *id007
         meter_id: 25
         model: Transmitter
         model_url: http://www.currentcost.com/product-transmitter.html
@@ -1922,17 +1922,17 @@ buildings:
         sample_period: 6
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_26.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:22+00:00', start: '2013-03-12T11:53:48+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 26
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1942,17 +1942,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_27.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-02-26T19:12:58+00:00', start: '2013-03-12T11:53:48+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 27
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1962,17 +1962,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_28.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:25+00:00', start: '2013-03-12T11:53:50+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 28
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -1982,17 +1982,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_29.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:30+00:00', start: '2013-03-12T11:53:51+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 29
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2002,17 +2002,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_30.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-05-05T21:17:10+01:00', start: '2013-03-12T11:53:49+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 30
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2022,17 +2022,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_31.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:31+00:00', start: '2013-03-13T20:59:22+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 31
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2042,17 +2042,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_32.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:28+00:00', start: '2013-03-13T20:59:19+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 32
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2062,17 +2062,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_33.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:35+00:00', start: '2013-03-12T19:53:38+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 33
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2082,17 +2082,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_34.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:39+00:00', start: '2013-03-12T11:53:49+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 34
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2102,17 +2102,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_35.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:36+00:00', start: '2013-03-12T11:53:47+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 35
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2122,17 +2122,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_36.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:39+00:00', start: '2013-02-09T08:27:00+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 36
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2142,17 +2142,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_37.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:41+00:00', start: '2013-03-13T20:59:23+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 37
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2162,17 +2162,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_38.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:42+00:00', start: '2013-03-13T20:59:24+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 38
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2182,17 +2182,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_39.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-10T08:43:43+00:00', start: '2013-03-15T08:40:32+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 39
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2202,17 +2202,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_40.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-11T09:10:53+00:00', start: '2013-03-15T08:40:17+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 40
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2222,17 +2222,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_41.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-12-18T11:38:43+00:00', start: '2013-04-25T06:54:44+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 41
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2242,17 +2242,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_42.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:44+00:00', start: '2013-03-14T20:20:02+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 42
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2262,17 +2262,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_43.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:44+00:00', start: '2013-03-14T20:20:02+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 43
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2282,17 +2282,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_44.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:46+00:00', start: '2013-03-15T08:19:05+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 44
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2302,17 +2302,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_45.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:45+00:00', start: '2013-03-15T08:15:23+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 45
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2322,17 +2322,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_46.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:49+00:00', start: '2013-03-15T08:16:19+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 46
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2342,17 +2342,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_47.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:54+00:00', start: '2013-04-11T20:08:54+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 47
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2362,17 +2362,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_48.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:55+00:00', start: '2013-04-11T20:08:55+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 48
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2382,17 +2382,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_49.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-13T06:15:57+00:00', start: '2013-04-11T20:08:56+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 49
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2402,17 +2402,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_50.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:14+00:00', start: '2013-04-11T20:08:56+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 50
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2422,17 +2422,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_51.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:12+00:00', start: '2013-04-11T20:08:54+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 51
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2442,17 +2442,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_52.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-18T07:56:55+01:00', start: '2013-06-19T15:26:41+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 52
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2462,17 +2462,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_1/channel_53.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2014-03-12T20:23:17+00:00', start: '2013-10-22T15:40:57+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 53
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2482,13 +2482,13 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - data_location: house_1/mains.dat
         dates_active:
         - {end: '2014-03-13T06:16:10.400000+00:00', start: '2013-03-17T19:12:43.100000+00:00'}
         manufacturer: Jack Kelly / Imperial College London
         max_sample_period: 3
-        measurements: &id014
+        measurements: &id015
         - {cummulative: false, maximum: 25000, minimum: 0, physical_quantity: power,
           type: active}
         - {cummulative: false, maximum: 25000, minimum: 0, physical_quantity: power,
@@ -2503,7 +2503,7 @@ buildings:
         wireless: false
 - building_id: 2
   dataset: UKPD
-  geo_location: *id008
+  geo_location: *id009
   temporal_coverage: {end: '2013-10-10T06:15:58+01:00', start: '2013-02-17T15:39:19+00:00'}
   timezone: Europe/London
   utilities:
@@ -2539,7 +2539,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [4]
         name: active speaker
@@ -2589,7 +2589,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [8]
         name: kettle
@@ -2603,7 +2603,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [9]
         name: rice cooker
@@ -2653,7 +2653,7 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - *id001
+          - *id002
         instance: 1
         meter_ids: [12]
         name: washing machine
@@ -2670,7 +2670,7 @@ buildings:
             volume: {description: litres, type: number}
           distributions:
             on_power:
-            - *id009
+            - *id010
           instance: 1
           name: electric water heater
           parent: electric water heater
@@ -2682,9 +2682,9 @@ buildings:
         control: [manual]
         distributions:
           on_duration:
-          - *id010
+          - *id011
           rooms:
-          - *id001
+          - *id002
         instance: 1
         meter_ids: [13]
         name: dish washer
@@ -2714,7 +2714,7 @@ buildings:
           parent: compressor
         distributions:
           rooms:
-          - *id011
+          - *id012
         instance: 1
         meter_ids: [14]
         name: fridge
@@ -2727,7 +2727,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [15]
         name: microwave
@@ -2741,7 +2741,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [16]
         name: toaster
@@ -2782,25 +2782,25 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [19]
         name: cooker
         original_name: cooker
         parent: cooker
         usual_components: [grill, stove, oven]
-      mains_voltage: *id012
+      mains_voltage: *id013
       meters:
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_1.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:50+01:00', start: '2013-02-17T16:17:34+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id013
+        - *id014
         meter_id: 1
         model: EcoManager Whole House Transmitter
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
@@ -2810,17 +2810,17 @@ buildings:
         seller: EDF Energy
         site_meter: true
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_2.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:38+01:00', start: '2013-02-17T15:39:19+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 2
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2830,17 +2830,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_3.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:39+01:00', start: '2013-02-17T15:39:19+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 3
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2850,17 +2850,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_4.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:45+01:00', start: '2013-02-17T15:39:19+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 4
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2870,17 +2870,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_5.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:44+01:00', start: '2013-02-17T15:39:19+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 5
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2890,17 +2890,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_6.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:13+01:00', start: '2013-05-20T22:28:38+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 6
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2910,17 +2910,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_7.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:51+01:00', start: '2013-04-16T22:18:09+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 7
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2930,17 +2930,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_8.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:56+01:00', start: '2013-02-17T16:00:22+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 8
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2950,17 +2950,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_9.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:58+01:00', start: '2013-04-16T22:18:09+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 9
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2970,17 +2970,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_10.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:14+01:00', start: '2013-04-16T22:18:09+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 10
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -2990,17 +2990,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_11.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:21+01:00', start: '2013-04-16T22:18:09+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 11
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3010,17 +3010,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_12.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:20+01:00', start: '2013-05-20T22:28:39+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 12
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3030,17 +3030,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_13.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:20+01:00', start: '2013-05-20T22:28:39+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 13
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3050,17 +3050,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_14.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:26+01:00', start: '2013-05-20T22:28:39+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 14
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3070,17 +3070,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_15.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:26+01:00', start: '2013-05-20T22:28:39+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 15
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3090,17 +3090,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_16.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:26+01:00', start: '2013-05-20T22:28:39+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 16
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3110,17 +3110,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_17.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:33+01:00', start: '2013-05-20T22:28:40+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 17
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3130,17 +3130,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_18.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:32+01:00', start: '2013-05-20T22:28:39+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 18
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3150,17 +3150,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_19.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-10T06:15:39+01:00', start: '2013-05-20T22:28:40+01:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 19
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3170,17 +3170,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_2/channel_20.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-05-20T17:32:54+01:00', start: '2013-02-17T16:17:36+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 20
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3190,13 +3190,13 @@ buildings:
         seller: EDF Energy
         submeter_of: 0
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - data_location: house_2/mains.dat
         dates_active:
         - {end: '2013-10-10T06:16:00.500000+01:00', start: '2013-04-16T21:45:16.300000+01:00'}
         manufacturer: Jack Kelly / Imperial College London
         max_sample_period: 3
-        measurements: *id014
+        measurements: *id015
         meter_id: 20
         model: Sound Card Power Meter
         model_url: https://github.com/JackKelly/snd_card_power_meter
@@ -3206,7 +3206,7 @@ buildings:
         wireless: false
 - building_id: 3
   dataset: UKPD
-  geo_location: *id008
+  geo_location: *id009
   temporal_coverage: {end: '2013-04-08T06:15:05+01:00', start: '2013-02-27T20:35:14+00:00'}
   timezone: Europe/London
   utilities:
@@ -3220,7 +3220,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [2]
         name: kettle
@@ -3260,24 +3260,24 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [5]
         name: projector
         original_name: projector
         parent: projector
-      mains_voltage: *id012
+      mains_voltage: *id013
       meters:
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_3/channel_1.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-04-08T06:14:53+01:00', start: '2013-02-27T20:35:14+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id013
+        - *id014
         meter_id: 1
         model: EcoManager Whole House Transmitter
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
@@ -3287,17 +3287,17 @@ buildings:
         seller: EDF Energy
         site_meter: true
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_3/channel_2.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-04-08T06:15:05+01:00', start: '2013-02-27T20:35:20+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 2
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3307,17 +3307,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_3/channel_3.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-04-08T06:15:05+01:00', start: '2013-02-27T20:35:20+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 3
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3327,17 +3327,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_3/channel_4.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-04-08T06:15:05+01:00', start: '2013-02-27T20:35:20+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 4
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3347,17 +3347,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_3/channel_5.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-04-08T06:15:05+01:00', start: '2013-02-27T20:35:20+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 5
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3367,10 +3367,10 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
 - building_id: 4
   dataset: UKPD
-  geo_location: *id008
+  geo_location: *id009
   temporal_coverage: {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:07+00:00'}
   timezone: Europe/London
   utilities:
@@ -3391,7 +3391,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [2]
         name: television
@@ -3404,7 +3404,7 @@ buildings:
           traditional: consumer electronics
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [2]
         name: DVD player
@@ -3417,7 +3417,7 @@ buildings:
         description: digibox
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [2]
         name: set top box
@@ -3442,7 +3442,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [3]
         name: kettle
@@ -3455,7 +3455,7 @@ buildings:
         description: probably near the kettle
         distributions:
           rooms:
-          - *id003
+          - *id004
         instance: 1
         meter_ids: [3]
         name: radio
@@ -3477,7 +3477,7 @@ buildings:
         control: [manual, thermostat, timer]
         distributions:
           room:
-          - *id015
+          - *id016
         fuel: natural gas
         instance: 1
         meter_ids: [4]
@@ -3509,7 +3509,7 @@ buildings:
           parent: compressor
         distributions:
           rooms:
-          - *id011
+          - *id012
         instance: 1
         meter_ids: [5]
         name: freezer
@@ -3540,7 +3540,7 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - *id001
+          - *id002
         instance: 1
         meter_ids: [6]
         name: washing machine
@@ -3553,7 +3553,7 @@ buildings:
         control: [manual]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [6]
         name: microwave
@@ -3578,24 +3578,24 @@ buildings:
         control: [manual, timer]
         distributions:
           rooms:
-          - *id002
+          - *id003
         instance: 1
         meter_ids: [6]
         name: breadmaker
         original_name: washing_machine_microwave_breadmaker
         parent: breadmaker
-      mains_voltage: *id012
+      mains_voltage: *id013
       meters:
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_4/channel_1.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-01T06:15:07+01:00', start: '2013-03-09T14:40:07+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id013
+        - *id014
         meter_id: 1
         model: EcoManager Whole House Transmitter
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
@@ -3605,17 +3605,17 @@ buildings:
         seller: EDF Energy
         site_meter: true
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_4/channel_2.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-01T06:15:07+01:00', start: '2013-03-09T14:40:13+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 2
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3625,17 +3625,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_4/channel_3.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-09-29T10:38:28+01:00', start: '2013-03-09T14:40:13+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 3
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3645,17 +3645,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_4/channel_4.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:13+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 4
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3665,17 +3665,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_4/channel_5.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:13+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 5
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3685,17 +3685,17 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
       - brand: EcoManager
         brand_url: http://www.edfenergy.com/products-services/for-your-home/ecomanager
         data_location: house_4/channel_6.dat
-        data_logger: *id004
+        data_logger: *id005
         dates_active:
         - {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:13+00:00'}
         manufacturer: Current Cost / Sailwider
         max_sample_period: 120
         measurements:
-        - *id007
+        - *id008
         meter_id: 6
         model: EcoManager Transmitter Plug
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
@@ -3705,7 +3705,7 @@ buildings:
         seller: EDF Energy
         submeter_of: 1
         wireless: true
-        wireless_base: *id005
+        wireless_base: *id006
 contact: jack.kelly@imperial.ac.uk
 creators: ['Kelly, Jack']
 data_formats_and_locations:
@@ -3717,13 +3717,13 @@ description: Appliance-by-appliance and whole-home power demand for 4 UK homes. 
 description_of_subjects: 3 MSc students and 1 PhD student.
 funding: [Jack Kelly's PhD is funded by an EPSRC DTA, Hardware necessary for this
     project was funded from Jack Kelly's Intel EU PhD Fellowship]
-geo_location: *id008
+geo_location: *id009
 geospatial_coverage: Southern England
 has_been_concatenated: true
 institution: Imperial College London
-items: buildings
-mains_voltage: *id012
-number_of_items: 4
+item_type: buildings
+mains_voltage: *id013
+number_of_buildings: 4
 publication_date: '2014-03-14'
 publisher: UK Energy Research Centre Energy Data Centre (UKERC EDC)
 related_documents: ['The following poster describes the metering setup and provides
