@@ -1442,6 +1442,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
         original_name: aggregate
         parent: EDFEnergy~EcoManagerWholeHouseTx
+        preprocessing_applied:
+        - {filter: clip, maximum: 20000}
         sample_period: 6
         seller: EDF Energy
         site_meter: true
@@ -1464,6 +1466,8 @@ buildings:
         model_url: http://www.currentcost.com/product-transmitter.html
         original_name: boiler
         parent: CurrentCost~Tx
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         submeter_of: 0
         wireless: true
@@ -1480,6 +1484,8 @@ buildings:
         model_url: http://www.currentcost.com/product-transmitter.html
         original_name: solar_thermal_pump
         parent: CurrentCost~Tx
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         submeter_of: 0
         wireless: true
@@ -1500,6 +1506,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: laptop
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1520,6 +1528,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: washing_machine
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1540,6 +1550,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: dishwasher
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1560,6 +1572,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: tv
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1577,6 +1591,8 @@ buildings:
         model_url: http://www.currentcost.com/product-transmitter.html
         original_name: kitchen_lights
         parent: CurrentCost~Tx
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         submeter_of: 25
         wireless: true
@@ -1596,6 +1612,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: htpc
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1616,6 +1634,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kettle
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1636,6 +1656,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: toaster
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1662,6 +1684,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: fridge
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1682,6 +1706,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: microwave
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1702,6 +1728,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: lcd_office
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1722,6 +1750,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: hifi_office
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1742,6 +1772,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: breadmaker
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1762,6 +1794,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: amp_livingroom
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1782,6 +1816,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: adsl_router
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1802,6 +1838,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: livingroom_s_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1822,6 +1860,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: soldering_iron
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1842,6 +1882,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: gigE_&_USBhub
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1862,6 +1904,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: hoover
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1882,6 +1926,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kitchen_dt_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1902,6 +1948,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: bedroom_ds_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1919,6 +1967,8 @@ buildings:
         model_url: http://www.currentcost.com/product-transmitter.html
         original_name: lighting_circuit
         parent: CurrentCost~Tx
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         submeter_of: 0
         wireless: true
@@ -1938,6 +1988,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: livingroom_s_lamp2
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1958,6 +2010,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: iPad_charger
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1978,6 +2032,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: subwoofer_livingroom
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -1998,6 +2054,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: livingroom_lamp_tv
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2018,6 +2076,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: DAB_radio_livingroom
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2038,6 +2098,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kitchen_lamp2
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2058,6 +2120,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kitchen_phone&stereo
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2078,6 +2142,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: utilityrm_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2098,6 +2164,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: samsung_charger
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2118,6 +2186,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: bedroom_d_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2138,6 +2208,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: coffee_machine
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2158,6 +2230,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kitchen_radio
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2178,6 +2252,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: bedroom_chargers
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2198,6 +2274,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: hair_dryer
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2218,6 +2296,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: straighteners
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2238,6 +2318,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: iron
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2258,6 +2340,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: gas_oven
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2278,6 +2362,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: data_logger_pc
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2298,6 +2384,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: childs_table_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2318,6 +2406,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: childs_ds_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2338,6 +2428,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: baby_monitor_tx
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2358,6 +2450,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: battery_charger
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2378,6 +2472,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: office_lamp1
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2398,6 +2494,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: office_lamp2
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2418,6 +2516,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: office_lamp3
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2438,6 +2538,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: office_pc
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2458,6 +2560,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: office_fan
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2478,6 +2582,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: LED_printer
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2806,6 +2912,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
         original_name: aggregate
         parent: EDFEnergy~EcoManagerWholeHouseTx
+        preprocessing_applied:
+        - {filter: clip, maximum: 20000}
         sample_period: 6
         seller: EDF Energy
         site_meter: true
@@ -2826,6 +2934,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: laptop
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2846,6 +2956,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: monitor
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2866,6 +2978,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: speakers
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2886,6 +3000,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: server
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2906,6 +3022,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: router
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2926,6 +3044,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: server_hdd
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2946,6 +3066,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kettle
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2966,6 +3088,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: rice_cooker
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -2986,6 +3110,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: running_machine
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3006,6 +3132,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: laptop2
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3026,6 +3154,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: washing_machine
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3046,6 +3176,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: dish_washer
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3066,6 +3198,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: fridge
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3086,6 +3220,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: microwave
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3106,6 +3242,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: toaster
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3126,6 +3264,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: playstation
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3146,6 +3286,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: modem
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3166,6 +3308,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: cooker
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 0
@@ -3263,6 +3407,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
         original_name: aggregate
         parent: EDFEnergy~EcoManagerWholeHouseTx
+        preprocessing_applied:
+        - {filter: clip, maximum: 20000}
         sample_period: 6
         seller: EDF Energy
         site_meter: true
@@ -3283,6 +3429,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kettle
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3303,6 +3451,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: electric_heater
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3323,6 +3473,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: laptop
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3343,6 +3495,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: projector
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3581,6 +3735,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=547
         original_name: aggregate
         parent: EDFEnergy~EcoManagerWholeHouseTx
+        preprocessing_applied:
+        - {filter: clip, maximum: 20000}
         sample_period: 6
         seller: EDF Energy
         site_meter: true
@@ -3601,6 +3757,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: tv_dvd_digibox_lamp
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3621,6 +3779,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: kettle_radio
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3641,6 +3801,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: gas_boiler
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3661,6 +3823,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: freezer
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
@@ -3681,6 +3845,8 @@ buildings:
         model_url: https://shop.edfenergy.com/Item.aspx?id=540
         original_name: washing_machine_microwave_breadmaker
         parent: EDFEnergy~EcoManagerTxPlug
+        preprocessing_applied:
+        - {filter: clip, maximum: 4000}
         sample_period: 6
         seller: EDF Energy
         submeter_of: 1
