@@ -1,5 +1,5 @@
-ukpd_metadata
-=============
+UK-DALE_metadata
+================
 
 Metadata for my UK Domestic Appliance-Level Electricity (UK-DALE) dataset.
 
