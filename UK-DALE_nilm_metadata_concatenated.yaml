@@ -1,6 +1,6 @@
 buildings:
 - building_id: 1
-  dataset: UKPD
+  dataset: UK-DALE
   description: 'Some individual appliance meters are switched off from the socket
     for significant portions of time.  These include (using original names): laptop,
     kettle, toaster, lcd_office, hifi_office, livingroom_s_lamp, soldering_iron, gigE_&_USBhub,
@@ -2608,7 +2608,7 @@ buildings:
         site_meter: true
         wireless: false
 - building_id: 2
-  dataset: UKPD
+  dataset: UK-DALE
   geo_location: *id009
   temporal_coverage: {end: '2013-10-10T06:15:58+01:00', start: '2013-02-17T15:39:19+00:00'}
   timezone: Europe/London
@@ -3329,7 +3329,7 @@ buildings:
         site_meter: true
         wireless: false
 - building_id: 3
-  dataset: UKPD
+  dataset: UK-DALE
   geo_location: *id009
   temporal_coverage: {end: '2013-04-08T06:15:05+01:00', start: '2013-02-27T20:35:14+00:00'}
   timezone: Europe/London
@@ -3503,7 +3503,7 @@ buildings:
         wireless: true
         wireless_base: *id006
 - building_id: 4
-  dataset: UKPD
+  dataset: UK-DALE
   geo_location: *id009
   temporal_coverage: {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:07+00:00'}
   timezone: Europe/London
@@ -3869,7 +3869,7 @@ has_been_concatenated: true
 institution: Imperial College London
 item_type: buildings
 mains_voltage: *id013
-name: UK Power Dataset
+name: UK Domestic Appliance-Level Electricity
 number_of_buildings: 4
 publication_date: '2014-03-24'
 publisher: UK Energy Research Centre Energy Data Centre (UKERC EDC)
@@ -3880,7 +3880,7 @@ related_documents: ['The following poster describes the metering setup and provi
 rights_list:
 - {name: Creative Commons Attribution 4.0 International (CC BY 4.0), uri: 'http://creativecommons.org/licenses/by/4.0/'}
 schema: https://github.com/nilmtk/nilm_metadata/tree/v0.1.0
-short_name: UKPD
+short_name: UK-DALE
 subject: Disaggregated domestic electricity demand
 temporal_coverage: {end: '2014-03-22T20:07:03+00:00', start: '2013-02-27T20:35:20+00:00'}
 timezone: Europe/London

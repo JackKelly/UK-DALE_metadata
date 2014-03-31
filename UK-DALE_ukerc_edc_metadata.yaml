@@ -1,6 +1,6 @@
 Schema: http://ukedc.rl.ac.uk/format.html
 
-Title: UK Power Dataset (UKPD)
+Title: UK Domestic Appliance-Level Electricity (UK-DALE)
 
 Subject: Disaggregated domestic electricity demand
 
@@ -46,4 +46,3 @@ Parameter names: See detailed metadata for full details.  Most files are UNIX ti
 Data type: Time series
 
 Energy data category: ENERGY CONSUMPTION / ENERGY EFFICIENCY - Residential (Domestic)
-
