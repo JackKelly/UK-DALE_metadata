@@ -931,17 +931,15 @@ def start_time(filename):
 def timeframe(start, end):
     return {'start': start.isoformat(), 'end': end.isoformat()}
 
-dataset['buildings'] = []
 dataset_start = None
 dataset_end = None
-for building_i in range(1,N_BULDINGS+1):
+buildings = {}
+for building_i in range(1, N_BULDINGS+1):
     building = building_metadata[building_i]
-    building['building_id'] = building_i
-    building.update({'utilities': {'electric': {'meters': [], 'appliances': []}}})
-    building['dataset'] = dataset['short_name']
-    dataset['buildings'].append(building)
-    building_path = join(RAW_UKPD_DATA_PATH, 'house_{:d}'.format(building_i))
-    electric = building['utilities']['electric']
+    building['instance'] = building_i
+    original_building_name = 'house_{:d}'.format(building_i)
+    building['original_name'] = original_building_name
+    building_path = join(RAW_UKPD_DATA_PATH, original_building_name)
 
     #--------- METERS -------------------------------
     mains = join(building_path, 'mains.dat')
@@ -949,9 +947,9 @@ for building_i in range(1,N_BULDINGS+1):
     labels = load_labels(building_path)
     building_start = None
     building_end = None
-    meters = electric['meters']
-    chans = labels.keys() # we want to process meters in order
-    chans.sort()
+    building['elec_meters'] = {}
+    chans = labels.keys() 
+    chans.sort() # we want to process meters in order
     for chan in chans:
         label = labels[chan]
         fname = join(building_path, 'channel_{:d}.dat'.format(chan))
@@ -962,46 +960,48 @@ for building_i in range(1,N_BULDINGS+1):
         if building_end is None or end > building_end:
             building_end = end
 
-        meter = {'meter_id': chan,
-                 'dates_active': [ timeframe(start, end) ],
-                 'original_name': label,
-                 'data_location': 'house_{:d}/channel_{:d}.dat'.format(building_i, chan)}
+        meter = {
+            'data_location': 
+                 'house_{:d}/channel_{:d}.dat'.format(building_i, chan),
+            'timeframe': timeframe(start, end)
+        }
+
         if label == 'aggregate':
             meter.update({"site_meter": True,
-                          'parent': 'EDFEnergy~EcoManagerWholeHouseTx',
-                          'preprocessing_applied': [
-                              {'filter': 'clip',
-                               'maximum': 20000}]})
+                          'device_model': 'EcoManagerWholeHouseTx',
+                          'preprocessing_applied': 
+                              {'clip': {'upper_limit': 20000}}})
         else:
             meter.update({"submeter_of": 0 if mains_exists else 1,
-                          'parent': 'EDFEnergy~EcoManagerTxPlug',
-                          'preprocessing_applied': [
-                              {'filter': 'clip',
-                               'maximum': 4000}]})
+                          'device_model': 'EcoManagerTxPlug',
+                          'preprocessing_applied': 
+                              {'clip': {'upper_limit': 4000}}})
             if building_i == 1:
                 if label in ['boiler', 'solar_thermal_pump', 'lighting_circuit',
                              'kitchen_lights']:
-                    meter.update({"submeter_of": 0 if mains_exists else 1,
-                                  'parent': 'CurrentCost~Tx'})
+                    meter.update({'device_model': 'CurrentCostTx'})
 
                 if label == 'kitchen_lights':
-                    meter.update({"submeter_of": chan_for_label('lighting_circuit', labels)})
+                    meter.update({"submeter_of": 
+                                  chan_for_label('lighting_circuit', labels)})
 
                 if label == 'toaster':
                     meter.update({'warning': 'For the five days from Mon 24th June 2013 to Fri 28th June we had someone staying at the house who occassionally swapped the toaster and kettle around (i.e. the toaster was plugged into the kettle sensor and visa-versa!) and also appeared to plug the hoover sensor into the kettle sensor (i.e. both the hoover and kettle sensor would have recorded the same appliance for a few hours).'})
 
-        meters.append(meter)
+        building['elec_meters'][chan] = meter
         
     if mains_exists:
-        meters.append({
-            'parent': 'JackKelly~SoundCardPowerMeter',
-            'dates_active': [timeframe(start_time(mains), end_time(mains))],
+        meters = building['elec_meters'].keys()
+        meters.sort()
+        building['elec_meters'][meters[-1]+1] = {
+            'meter_device': 'SoundCardPowerMeter',
+            'timeframe': timeframe(start_time(mains), end_time(mains)),
             'site_meter': True,
-            'meter_id': len(meters),
+            'submeter_of': 1,
             'data_location': 'house_{:d}/mains.dat'.format(building_i)
-        })
+        }
 
-    building['temporal_coverage'] = timeframe(building_start, building_end)
+    building['timeframe'] = timeframe(building_start, building_end)
     if dataset_start is None or building_start < dataset_start:
         dataset_start = start
     if dataset_end is None or building_end > dataset_end:
@@ -1016,11 +1016,16 @@ for building_i in range(1,N_BULDINGS+1):
         if not appliance.get('meter_ids'):
             appliance['meter_ids'] = [chan_for_label(appliance['original_name'], labels)]
     
-    electric['appliances'] = appliances
+    building['appliances'] = appliances
+    buildings[building_i] = building
     
-dataset['temporal_coverage'] = timeframe(dataset_start, dataset_end)
+dataset['timeframe'] = timeframe(dataset_start, dataset_end)
     
-with open(OUTPUT_FILENAME, 'w') as fh:
+with open(join(OUTPUT_PATH, 'dataset.yaml'), 'w') as fh:
     yaml.dump(dataset, fh)
+
+for building_i, building in buildings.iteritems():
+    with open(join(OUTPUT_PATH, 'building{:d}.yaml'.format(building_i)), 'w') as fh:
+        yaml.dump(building, fh)
 
 print("done")
