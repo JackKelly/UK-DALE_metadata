@@ -994,7 +994,7 @@ for building_i in range(1, N_BULDINGS+1):
         meters = building['elec_meters'].keys()
         meters.sort()
         building['elec_meters'][meters[-1]+1] = {
-            'meter_device': 'SoundCardPowerMeter',
+            'device_model': 'SoundCardPowerMeter',
             'timeframe': timeframe(start_time(mains), end_time(mains)),
             'site_meter': True,
             'submeter_of': 1,
