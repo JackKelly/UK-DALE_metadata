@@ -684,21 +684,21 @@ appliances_for_each_building = {
         {
             'type': 'immersion heater',
             'description': 'It has never been used and would only ever be used if the boiler broke.',
-            'meter_ids': [0],
+            'meters': [0],
             'room': 'bathroom',
             'year_of_purchase': 2012
         },
         {
             'type': 'water pump',
             'description': 'Very efficient under-floor heating water pump.  Uses about 5 watts when running.',
-            'meter_ids': [0],
+            'meters': [0],
             'room': 'lounge',
             'year_of_purchase': 2010
         },
         {
             'type': 'security alarm',
             'description': 'Always on.  Appears to use about 10 watts.  Was turned off Sunday 11th August 2013',
-            'meter_ids': [0],
+            'meters': [0],
             'room': 'hall',
             'year_of_purchase': 2008,
             'dates_active': [{'end': '2013-08-11'}]
@@ -708,21 +708,21 @@ appliances_for_each_building = {
             'instance': 2,
             'subtype': 'single-room MVHR',
             'description': 'Bathroom extractor fan (MVHR). On for most of the time during winter months (in summer we turn the fan off and open the window). Has 2 modes: trickle and boost.  Boost is triggered using a manual pull-cord when necessary. Only uses about 2 watts in trickle mode and about 10 watts in boost mode.',
-            'meter_ids': [0],
+            'meters': [0],
             'room': 'bathroom',
             'year_of_purchase': 2012          
         },
         {
             'type': 'drill', 
             'description': 'Used: Sat 13/04/2013 17:43 BST for one short burst.  And other times, not logged.',
-            'meter_ids': [0],
+            'meters': [0],
             'year_of_purchase': 2009
         },
         {
             'type': 'laptop computer', 
             'instance': 2,
             'manufacturer': 'Dell',
-            'meter_ids': [0],
+            'meters': [0],
             'year_of_purchase': 2012,
             'description': 'Charged 09:21 BST Sat 4th May 2013 and lots of other times subsequently.'
         },
@@ -1011,10 +1011,16 @@ for building_i in range(1, N_BULDINGS+1):
     appliances = appliances_for_each_building[building_i]
 
     # infer meter IDs from original_name and labels.dat
+    instances = {}
     for i in range(len(appliances)):
         appliance = appliances[i]
-        if not appliance.get('meter_ids'):
-            appliance['meter_ids'] = [chan_for_label(appliance['original_name'], labels)]
+        if not appliance.get('meters'):
+            appliance['meters'] = [chan_for_label(appliance['original_name'], labels)]
+        if not appliance.get('instance'):
+            appliance_type = appliance.get('type')
+            instance = instances.setdefault(appliance_type, 1)
+            appliance['instance'] = instance
+            instances[appliance_type] += 1
     
     building['appliances'] = appliances
     buildings[building_i] = building
