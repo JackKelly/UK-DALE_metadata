@@ -12,7 +12,7 @@ OUTPUT_PATH = "."
 
 TIMEZONE = "Europe/London"
 TZ = pytz.timezone(TIMEZONE)
-N_BULDINGS = 4
+N_BULDINGS = 5
 
 dataset = {
     "name": "UK-DALE",
@@ -30,6 +30,8 @@ dataset = {
         " http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue/view.cgi.py?id=19"
         " and the 6-second data is available from"
         " http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue/view.cgi.py?id=18"
+        " but please note that this archive is updated less frequently than the"
+        " data on www.doc.ic.ac.uk/~dk3810/data/"
     ),
     (
         "This research paper describes the data collection:"
@@ -47,13 +49,13 @@ dataset = {
     "contact": "jack.kelly@imperial.ac.uk",
     "institution": "Imperial College London", 
     "description": (
-        "Appliance-by-appliance and whole-home power demand for 4 UK homes."
-        " Appliance data was recorded once every 6 seconds.  Whole-home data"
-        " was recorded once every 6 seconds for 2 homes and additionally at"
-        " 16kHz for the other 2 homes.  Detailed metadata is included."
+        "Appliance-by-appliance and whole-home power demand for 5 UK homes."
+        " Appliance power demand was recorded once every 6 seconds."
+        " Whole-home power demand was recorded once every 6 seconds for all"
+        " homes and additionally at 16kHz for homes 1, 2 and 5."
+        " Detailed metadata is included."
     ),
-    "date": "2014-03-24",
-    "number_of_buildings": N_BULDINGS, 
+    "number_of_buildings": N_BULDINGS,
     "geo_location": {
         "country": "GB", 
         "locality": "London",
@@ -70,7 +72,7 @@ dataset = {
         "name": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
         "uri": "http://creativecommons.org/licenses/by/4.0/"
     }],
-    "description_of_subjects": "3 MSc students and 1 PhD student."
+    "description_of_subjects": "4 MSc students and 1 PhD student."
 }
 
 building_metadata = {
@@ -93,13 +95,26 @@ building_metadata = {
              "+ hot water tank + boiler + solar thermal pumping station"}
         ],
         "description": "Some individual appliance meters are switched off from the socket for significant portions of time.  These include (using original names): laptop, kettle, toaster, lcd_office, hifi_office, livingroom_s_lamp, soldering_iron, gigE_&_USBhub, hoover, iPad_charger, utilityrm_lamp, hair_dryer, straighteners, iron, childs_ds_lamp, office_lamp3, office_pc, gigE_switch",
-        "n_occupants": 2,
+        "n_occupants": 4,
+        "description_of_occupants": "2 adults and 1 dog started living in the house in 2006 (i.e. before the dataset started recording).  One child born 2011-08-27 and a second child born 2014-04-27.",
         "construction_year": 1905,
-        "energy_improvements": ["solar thermal", "loft insulation", "solid wall insulation", "double glazing"]
+        "energy_improvements": ["solar thermal", "loft insulation", "solid wall insulation", "double glazing"],
+        "heating": "natural gas",
+        "building_type": "end of terrace",
+        "ownership": "bought"
     },
     2: {},
     3: {},
-    4: {}
+    4: {},
+    5: {
+        "n_occupants": 2,
+        "description_of_occupants": "2 adults",
+        "heating": ["natural gas"],
+        "communal_boiler": True,
+        "construction_year": 2009,
+        "building_type": "flat",
+        "ownership": "bought"
+    }
 }
 
 appliances_for_each_building = {
@@ -834,7 +849,6 @@ appliances_for_each_building = {
         }
     ],
     4: [
-
         {
             'type': 'television',
             'original_name': 'tv_dvd_digibox_lamp'
@@ -882,6 +896,104 @@ appliances_for_each_building = {
         {
             'type': 'breadmaker',
             'original_name': 'washing_machine_microwave_breadmaker'
+        }
+    ],
+    5: [
+        {
+            'type': '',
+            'original_name': 'stereo_speakers_bedroom'
+        },
+        {
+            'type': '',
+            'original_name': 'i7_desktop'
+        },
+        {
+            'type': '',
+            'original_name': 'hairdryer'
+        },
+        {
+            'type': '',
+            'original_name': 'primary_tv'
+        },
+        {
+            'type': '',
+            'original_name': '24_inch_lcd_bedroom'
+        },
+        {
+            'type': '',
+            'original_name': 'treadmill'
+        },
+        {
+            'type': '',
+            'original_name': 'network_attached_storage'
+        },
+        {
+            'type': '',
+            'original_name': 'core2_server'
+        },
+        {
+            'type': '',
+            'original_name': '24_inch_lcd'
+        },
+        {
+            'type': '',
+            'original_name': 'PS4'
+        },
+        {
+            'type': '',
+            'original_name': 'steam_iron'
+        },
+        {
+            'type': '',
+            'original_name': 'nespresso_pixie'
+        },
+        {
+            'type': '',
+            'original_name': 'atom_pc'
+        },
+        {
+            'type': '',
+            'original_name': 'toaster'
+        },
+        {
+            'type': '',
+            'original_name': 'home_theatre_amp'
+        },
+        {
+            'type': '',
+            'original_name': 'sky_hd_box'
+        },
+        {
+            'type': '',
+            'original_name': 'kettle'
+        },
+        {
+            'type': '',
+            'original_name': 'fridge_freezer'
+        },
+        {
+            'type': '',
+            'original_name': 'oven'
+        },
+        {
+            'type': '',
+            'original_name': 'electric_hob'
+        },
+        {
+            'type': '',
+            'original_name': 'dishwasher'
+        },
+        {
+            'type': '',
+            'original_name': 'microwave'
+        },
+        {
+            'type': '',
+            'original_name': 'washer_dryer'
+        },
+        {
+            'type': '',
+            'original_name': 'vacuum_cleaner'
         }
     ]
 }
@@ -1026,6 +1138,7 @@ for building_i in range(1, N_BULDINGS+1):
     buildings[building_i] = building
     
 dataset['timeframe'] = timeframe(dataset_start, dataset_end)
+dataset['date'] = dataset_end.date().isoformat()
     
 with open(join(OUTPUT_PATH, 'dataset.yaml'), 'w') as fh:
     yaml.dump(dataset, fh)
