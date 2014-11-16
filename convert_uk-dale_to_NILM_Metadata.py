@@ -900,99 +900,124 @@ appliances_for_each_building = {
     ],
     5: [
         {
-            'type': '',
+            'type': 'active speaker',
             'original_name': 'stereo_speakers_bedroom'
         },
         {
-            'type': '',
+            'type': 'desktop computer',
+            'cpu': 'Intel i7',
             'original_name': 'i7_desktop'
         },
         {
-            'type': '',
+            'type': 'hair dryer',
             'original_name': 'hairdryer'
         },
         {
-            'type': '',
+            'type': 'television',
+            'description': 'primary TV',
             'original_name': 'primary_tv'
         },
         {
-            'type': '',
+            'type': 'computer monitor',
+            'components': [
+                {
+                    'type': 'flat screen',
+                    'display_technology': 'LCD',
+                    'diagonal_size': 24
+                }
+            ],
+            'room': 'bedroom',
             'original_name': '24_inch_lcd_bedroom'
         },
         {
-            'type': '',
+            'type': 'running machine',
             'original_name': 'treadmill'
         },
         {
-            'type': '',
+            'type': 'network attached storage',
             'original_name': 'network_attached_storage'
         },
         {
-            'type': '',
+            'type': 'server computer',
+            'cpu': 'Intel Core2',
             'original_name': 'core2_server'
         },
         {
-            'type': '',
+            'type': 'computer monitor',
+            'components': [
+                {
+                    'type': 'flat screen',
+                    'display_technology': 'LCD',
+                    'diagonal_size': 24
+                }
+            ],
             'original_name': '24_inch_lcd'
         },
         {
-            'type': '',
+            'type': 'games console',
+            'model': 'Playstation 4',
+            'manufacturer': 'Sony',
             'original_name': 'PS4'
         },
         {
-            'type': '',
+            'type': 'clothes iron',
             'original_name': 'steam_iron'
         },
         {
-            'type': '',
+            'type': 'coffee maker',
+            'model': 'Pixie',
+            'manufacturer': 'Nespresso',
             'original_name': 'nespresso_pixie'
         },
         {
-            'type': '',
+            'type': 'desktop computer',
+            'cpu': 'Intel Atom',
             'original_name': 'atom_pc'
         },
         {
-            'type': '',
+            'type': 'toaster',
             'original_name': 'toaster'
         },
         {
-            'type': '',
+            'type': 'audio amplifier',
+            'subtype': 'home theatre',
             'original_name': 'home_theatre_amp'
         },
         {
-            'type': '',
+            'type': 'set top box',
+            'model': 'Sky HD',
             'original_name': 'sky_hd_box'
         },
         {
-            'type': '',
+            'type': 'kettle',
             'original_name': 'kettle'
         },
         {
-            'type': '',
+            'type': 'fridge freezer',
             'original_name': 'fridge_freezer'
         },
         {
-            'type': '',
+            'type': 'electric oven',
             'original_name': 'oven'
         },
         {
-            'type': '',
+            'type': 'electric stove',
             'original_name': 'electric_hob'
         },
         {
-            'type': '',
+            'type': 'dish washer',
             'original_name': 'dishwasher'
         },
         {
-            'type': '',
+            'type': 'microwave',
             'original_name': 'microwave'
         },
         {
-            'type': '',
+            'type': 'washer dryer',
             'original_name': 'washer_dryer'
         },
         {
-            'type': '',
+            'type': 'vacuum cleaner',
             'original_name': 'vacuum_cleaner'
         }
     ]
