@@ -1140,9 +1140,9 @@ for building_i in range(1, N_BULDINGS+1):
 
     building['timeframe'] = timeframe(building_start, building_end)
     if dataset_start is None or building_start < dataset_start:
-        dataset_start = start
+        dataset_start = building_start
     if dataset_end is None or building_end > dataset_end:
-        dataset_end = end
+        dataset_end = building_end
 
     #------------ APPLIANCES --------------------
     appliances = appliances_for_each_building[building_i]
