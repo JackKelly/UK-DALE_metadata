@@ -1,6 +1,6 @@
 contact: jack.kelly@imperial.ac.uk
 creators: ['Kelly, Jack']
-date: '2014-08-25'
+date: '2014-11-14'
 description: Appliance-by-appliance and whole-home power demand for 5 UK homes. Appliance
   power demand was recorded once every 6 seconds. Whole-home power demand was recorded
   once every 6 seconds for all homes and additionally at 16kHz for homes 1, 2 and
@@ -29,5 +29,5 @@ rights_list:
 - {name: Creative Commons Attribution 4.0 International (CC BY 4.0), uri: 'http://creativecommons.org/licenses/by/4.0/'}
 schema: https://github.com/nilmtk/nilm_metadata/tree/v0.2
 subject: Disaggregated domestic electricity demand
-timeframe: {end: '2014-08-25T19:12:10+01:00', start: '2013-02-27T20:35:20+00:00'}
+timeframe: {end: '2014-11-14T09:48:45+00:00', start: '2013-02-27T20:35:20+00:00'}
 timezone: Europe/London
