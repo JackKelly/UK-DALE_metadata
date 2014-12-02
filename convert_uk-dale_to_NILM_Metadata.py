@@ -103,7 +103,15 @@ building_metadata = {
         "building_type": "end of terrace",
         "ownership": "bought"
     },
-    2: {},
+    2: {
+        "n_occupants": 2,
+        "description_of_occupants": "2 adults, 1 at work all day, other sometimes home",
+        "heating": "natural gas",
+        "construction_year": 1900,
+        "energy_improvements": ["cavity wall insulation", "double glazing"],
+        "building_type": "end of terrace",
+        "ownership": "bought"
+    },
     3: {},
     4: {},
     5: {
