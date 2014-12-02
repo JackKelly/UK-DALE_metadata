@@ -525,7 +525,8 @@ appliances_for_each_building = {
             ],
             'original_name': 'bedroom_d_lamp',
             'room': 'bedroom,1',
-            'year_of_purchase': 2006
+            'year_of_purchase': 2006,
+            'description': 'This light was not plugged into its submeter for a few months.  Instead the little DAB radio in the bedroom was plugged into this submeter.  This was fixed (and the light was reconnected with its submeter) on 2014-11-30 around 18:30.'
         },
         {
             'type': 'coffee maker',
