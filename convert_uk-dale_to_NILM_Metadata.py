@@ -99,14 +99,14 @@ building_metadata = {
         "description_of_occupants": "2 adults and 1 dog started living in the house in 2006 (i.e. before the dataset started recording).  One child born 2011-08-27 and a second child born 2014-04-27.",
         "construction_year": 1905,
         "energy_improvements": ["solar thermal", "loft insulation", "solid wall insulation", "double glazing"],
-        "heating": "natural gas",
+        "heating": ["natural gas"],
         "building_type": "end of terrace",
         "ownership": "bought"
     },
     2: {
         "n_occupants": 2,
         "description_of_occupants": "2 adults, 1 at work all day, other sometimes home",
-        "heating": "natural gas",
+        "heating": ["natural gas"],
         "construction_year": 1900,
         "energy_improvements": ["cavity wall insulation", "double glazing"],
         "building_type": "end of terrace",
