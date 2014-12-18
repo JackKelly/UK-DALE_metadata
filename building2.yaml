@@ -74,6 +74,9 @@ appliances:
   meters: [19]
   original_name: cooker
   type: cooker
+building_type: end of terrace
+construction_year: 1900
+description_of_occupants: 2 adults, 1 at work all day, other sometimes home
 elec_meters:
   1:
     data_location: house_2/channel_1.dat
@@ -214,6 +217,10 @@ elec_meters:
     site_meter: true
     submeter_of: 1
     timeframe: {end: '2013-10-10T06:16:00.500000+01:00', start: '2013-04-16T21:45:16.300000+01:00'}
+energy_improvements: [cavity wall insulation, double glazing]
+heating: [natural gas]
 instance: 2
+n_occupants: 2
 original_name: house_2
+ownership: bought
 timeframe: {end: '2013-10-10T06:15:58+01:00', start: '2013-02-17T15:39:19+00:00'}
