@@ -1088,14 +1088,18 @@ for building_i in range(1, N_BULDINGS+1):
     building_path = join(RAW_UKPD_DATA_PATH, original_building_name)
 
     #--------- METERS -------------------------------
-    mains = join(building_path, 'mains.dat')
-    mains_exists =  isfile(mains)
     labels = load_labels(building_path)
     building_start = None
     building_end = None
     building['elec_meters'] = {}
     chans = labels.keys() 
     chans.sort() # we want to process meters in order
+
+    # sound card power meter
+    scpm_filename = join(building_path, 'scpm_filename.dat')
+    scpm_exists =  isfile(scpm_filename)
+    scpm_instance_number = chans[-1] + 1
+
     for chan in chans:
         label = labels[chan]
         fname = join(building_path, 'channel_{:d}.dat'.format(chan))
@@ -1117,8 +1121,11 @@ for building_i in range(1, N_BULDINGS+1):
                           'device_model': 'EcoManagerWholeHouseTx',
                           'preprocessing_applied': 
                               {'clip': {'upper_limit': 20000}}})
+            if scpm_exists:
+                meter.update({"disabled": True,
+                              "submeter_of": scpm_instance_number})
         else:
-            meter.update({"submeter_of": 0 if mains_exists else 1,
+            meter.update({"submeter_of": 0 if scpm_exists else 1,
                           'device_model': 'EcoManagerTxPlug',
                           'preprocessing_applied': 
                               {'clip': {'upper_limit': 4000}}})
@@ -1136,15 +1143,13 @@ for building_i in range(1, N_BULDINGS+1):
 
         building['elec_meters'][chan] = meter
         
-    if mains_exists:
-        meters = building['elec_meters'].keys()
-        meters.sort()
-        building['elec_meters'][meters[-1]+1] = {
+    # Handle buildings with sound card power meters
+    if scpm_exists:
+        building['elec_meters'][scpm_instance_number] = {
             'device_model': 'SoundCardPowerMeter',
-            'timeframe': timeframe(start_time(mains), end_time(mains)),
+            'timeframe': timeframe(start_time(scpm_filename), end_time(scpm_filename)),
             'site_meter': True,
-            'submeter_of': 1,
-            'data_location': 'house_{:d}/mains.dat'.format(building_i)
+            'data_location': 'house_{:d}/scpm_filename.dat'.format(building_i)
         }
 
     building['timeframe'] = timeframe(building_start, building_end)
