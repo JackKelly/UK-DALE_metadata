@@ -1096,7 +1096,7 @@ for building_i in range(1, N_BULDINGS+1):
     chans.sort() # we want to process meters in order
 
     # sound card power meter
-    scpm_filename = join(building_path, 'scpm_filename.dat')
+    scpm_filename = join(building_path, 'mains.dat')
     scpm_exists =  isfile(scpm_filename)
     scpm_instance_number = chans[-1] + 1
 
@@ -1149,7 +1149,7 @@ for building_i in range(1, N_BULDINGS+1):
             'device_model': 'SoundCardPowerMeter',
             'timeframe': timeframe(start_time(scpm_filename), end_time(scpm_filename)),
             'site_meter': True,
-            'data_location': 'house_{:d}/scpm_filename.dat'.format(building_i)
+            'data_location': 'house_{:d}/mains.dat'.format(building_i)
         }
 
     building['timeframe'] = timeframe(building_start, building_end)
