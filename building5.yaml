@@ -127,175 +127,169 @@ elec_meters:
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:17:55+01:00', start: '2014-06-29T17:23:50+01:00'}
   3:
     data_location: house_5/channel_3.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:51:29+00:00', start: '2014-06-29T17:23:50+01:00'}
   4:
     data_location: house_5/channel_4.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:54:14+00:00', start: '2014-06-29T17:23:51+01:00'}
   5:
     data_location: house_5/channel_5.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:56:17+00:00', start: '2014-06-29T17:23:52+01:00'}
   6:
     data_location: house_5/channel_6.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:53:32+00:00', start: '2014-06-29T17:23:50+01:00'}
   7:
     data_location: house_5/channel_7.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:59:14+00:00', start: '2014-06-29T17:23:52+01:00'}
   8:
     data_location: house_5/channel_8.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:01:25+01:00', start: '2014-06-29T17:23:51+01:00'}
   9:
     data_location: house_5/channel_9.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:59:02+00:00', start: '2014-06-29T17:23:51+01:00'}
   10:
     data_location: house_5/channel_10.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:00:29+01:00', start: '2014-06-29T17:23:52+01:00'}
   11:
     data_location: house_5/channel_11.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-06-30T10:52:00+01:00', start: '2014-06-29T17:23:51+01:00'}
   12:
     data_location: house_5/channel_12.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:01:43+01:00', start: '2014-06-29T17:23:51+01:00'}
   13:
     data_location: house_5/channel_13.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:02:20+01:00', start: '2014-06-29T17:23:50+01:00'}
   14:
     data_location: house_5/channel_14.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:17:56+01:00', start: '2014-06-29T17:23:51+01:00'}
   15:
     data_location: house_5/channel_15.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:02:33+01:00', start: '2014-06-29T17:23:51+01:00'}
   16:
     data_location: house_5/channel_16.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:02:53+01:00', start: '2014-06-29T17:23:51+01:00'}
   17:
     data_location: house_5/channel_17.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:03:13+01:00', start: '2014-06-29T17:23:51+01:00'}
   18:
     data_location: house_5/channel_18.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-09-07T15:02:21+01:00', start: '2014-06-29T17:23:51+01:00'}
   19:
     data_location: house_5/channel_19.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:58:00+00:00', start: '2014-06-29T17:23:50+01:00'}
   20:
     data_location: house_5/channel_20.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:48:47+00:00', start: '2014-06-29T17:23:50+01:00'}
   21:
     data_location: house_5/channel_21.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:50:31+00:00', start: '2014-06-29T17:23:50+01:00'}
   22:
     data_location: house_5/channel_22.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T18:00:03+00:00', start: '2014-06-29T17:23:56+01:00'}
   23:
     data_location: house_5/channel_23.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:55:14+00:00', start: '2014-06-29T17:23:56+01:00'}
   24:
     data_location: house_5/channel_24.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
+    submeter_of: 1
     timeframe: {end: '2014-11-13T17:57:27+00:00', start: '2014-06-29T17:23:56+01:00'}
   25:
     data_location: house_5/channel_25.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
-    submeter_of: 0
-    timeframe: {end: '2014-08-25T19:12:10+01:00', start: '2014-06-30T11:09:33+01:00'}
-  26:
-    data_location: house_5/mains.dat
-    device_model: SoundCardPowerMeter
-    site_meter: true
     submeter_of: 1
-    timeframe: {end: '2014-11-13T20:35:25.100000+00:00', start: '2014-06-29T17:23:43.200000+01:00'}
+    timeframe: {end: '2014-08-25T19:12:10+01:00', start: '2014-06-30T11:09:33+01:00'}
 heating: [natural gas]
 instance: 5
 n_occupants: 2
