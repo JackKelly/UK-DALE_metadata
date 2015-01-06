@@ -47,6 +47,8 @@ appliances:
   meters: [6]
   original_name: washing_machine_microwave_breadmaker
   type: breadmaker
+building_type: mid-terrace
+description_of_occupants: 1 adult and 1 pensioner
 elec_meters:
   1:
     data_location: house_4/channel_1.dat
@@ -91,5 +93,7 @@ elec_meters:
     submeter_of: 1
     timeframe: {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:13+00:00'}
 instance: 4
+n_occupants: 2
 original_name: house_4
+ownership: bought
 timeframe: {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:07+00:00'}

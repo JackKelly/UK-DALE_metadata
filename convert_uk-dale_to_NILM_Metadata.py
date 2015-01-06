@@ -113,7 +113,12 @@ building_metadata = {
         "ownership": "bought"
     },
     3: {},
-    4: {},
+    4: {
+        "n_occupants": 2,
+        "description_of_occupants": "1 adult and 1 pensioner",
+        "building_type": "mid-terrace",
+        "ownership": "bought"
+    },
     5: {
         "n_occupants": 2,
         "description_of_occupants": "2 adults",
