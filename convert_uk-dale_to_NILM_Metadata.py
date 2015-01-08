@@ -117,7 +117,10 @@ building_metadata = {
         "n_occupants": 2,
         "description_of_occupants": "1 adult and 1 pensioner",
         "building_type": "mid-terrace",
-        "ownership": "bought"
+        "ownership": "bought",
+        "heating": ["natural gas"],
+        "construction_year": 1935,
+        "energy_improvements": ["loft insulation", "double glazing"]
     },
     5: {
         "n_occupants": 2,
