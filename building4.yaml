@@ -48,6 +48,7 @@ appliances:
   original_name: washing_machine_microwave_breadmaker
   type: breadmaker
 building_type: mid-terrace
+construction_year: 1935
 description_of_occupants: 1 adult and 1 pensioner
 elec_meters:
   1:
@@ -92,6 +93,8 @@ elec_meters:
       clip: {upper_limit: 4000}
     submeter_of: 1
     timeframe: {end: '2013-10-01T06:15:14+01:00', start: '2013-03-09T14:40:13+00:00'}
+energy_improvements: [loft insulation, double glazing]
+heating: [natural gas]
 instance: 4
 n_occupants: 2
 original_name: house_4
