@@ -22,6 +22,12 @@ dataset = {
     "publisher": "UK Energy Research Centre Energy Data Centre (UKERC EDC)",
     "related_documents": [
     (
+        "Jack Kelly and William Knottenbelt. The UK-DALE dataset,"
+        " domestic appliance-level electricity demand and whole-house demand from five"
+        " UK homes.  To appear in Scientific Data 2:150007.  DOI:10.1038/sdata.2015.7"
+        " arXiv:1404.0284 (2015)."
+    ),
+    (
         "Dataset is available for download from http://www.doc.ic.ac.uk/~dk3810/data/"
     ), 
     (
@@ -32,18 +38,7 @@ dataset = {
         " http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue/view.cgi.py?id=18"
         " but please note that this archive is updated less frequently than the"
         " data on www.doc.ic.ac.uk/~dk3810/data/"
-    ),
-    (
-        "This research paper describes the data collection:"
-        " http://arxiv.org/abs/1404.0284"
-    ),
-    (
-        "The following poster describes the metering setup and provides some analyses:"
-        " Jack Kelly and William Knottenbelt." 
-        " Smart Meter Disaggregation: Data Collection & Analysis."
-        " UK Energy Research Council Summer School Ph.D. poster session."
-        " June 2013. PDF: http://www.doc.ic.ac.uk/~dk3810/writing/UKERC_poster2013_v2.pdf"
-    ), 
+    )
     ], 
     "creators": ["Kelly, Jack"],
     "contact": "jack.kelly@imperial.ac.uk",
