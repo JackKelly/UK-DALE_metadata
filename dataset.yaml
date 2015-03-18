@@ -25,7 +25,8 @@ related_documents: ['Jack Kelly and William Knottenbelt. The UK-DALE dataset,
    http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue//view.cgi.py?id=21',
   'All the data is also available for download from http://www.doc.ic.ac.uk/~dk3810/data/.  
    This Imperial repository is likely to receive updates for House 1 data 
-   occasionally during 2015 and possibly further into the future.']
+   occasionally during 2015 and possibly further into the future.  This Imperial
+   repository may disappear some time after mid-2016.']
 rights_list:
 - {name: Creative Commons Attribution 4.0 International (CC BY 4.0), uri: 'http://creativecommons.org/licenses/by/4.0/'}
 schema: https://github.com/nilmtk/nilm_metadata/tree/v0.2
