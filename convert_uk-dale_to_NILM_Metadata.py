@@ -227,6 +227,7 @@ appliances_for_each_building = {
             'original_name': 'kitchen_lights',
             'description': '10 LED downlights in the kitchen ceiling',
             'subtype': 'ceiling downlight',
+            'room': 'kitchen',
             'main_room_light': True,
             'components': [
                 {

@@ -99,6 +99,7 @@ appliances:
     the kitchen lights are used a lot.
   instance: 1
   main_room_light: true
+  room: kitchen
   meters: [8]
   nominal_consumption: {on_power: 100}
   original_name: kitchen_lights
