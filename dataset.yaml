@@ -15,20 +15,15 @@ long_name: UK Domestic Appliance-Level Electricity
 name: UK-DALE
 number_of_buildings: 5
 publisher: UK Energy Research Centre Energy Data Centre (UKERC EDC)
-related_documents: ['Jack Kelly and William Knottenbelt. The UK-DALE dataset, 
-  domestic appliance-level electricity demand and whole-house demand from five
-  UK homes.  Scientific Data 2:150007.  DOI:10.1038/sdata.2015.7
-  arXiv:1404.0284 (2015).', 
-  'The 1s and 6s data is available from the UK Energy Research Council''s Energy Data Centre:
-   http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue/view.cgi.py?id=20 
-   DOI:10.5286/UKERC.EDC.000001',
-  'The 16 kHz data is also available from the UK Energy Research Council''s Energy Data Centre:
-   http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue//view.cgi.py?id=21
-   DOI:10.5286/UKERC.EDC.000002',
-  'All the data is also available for download from http://www.doc.ic.ac.uk/~dk3810/data/.  
-   This Imperial repository is likely to receive updates for House 1 data 
-   occasionally during 2015 and possibly further into the future.  This Imperial
-   repository may disappear some time after mid-2016.']
+related_documents: ['Jack Kelly and William Knottenbelt. The UK-DALE dataset, domestic
+    appliance-level electricity demand and whole-house demand from five UK homes.  To
+    appear in Scientific Data 2:150007.  DOI:10.1038/sdata.2015.7 arXiv:1404.0284
+    (2015).', 'Dataset is available for download from http://www.doc.ic.ac.uk/~dk3810/data/',
+  'Dataset is also available from the UK Energy Research Council''s Energy Data Centre:
+    The 1-second data is available from http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue/view.cgi.py?id=19
+    and the 6-second data is available from http://data.ukedc.rl.ac.uk/cgi-bin/dataset_catalogue/view.cgi.py?id=18
+    but please note that this archive is updated less frequently than the data on
+    www.doc.ic.ac.uk/~dk3810/data/']
 rights_list:
 - {name: Creative Commons Attribution 4.0 International (CC BY 4.0), uri: 'http://creativecommons.org/licenses/by/4.0/'}
 schema: https://github.com/nilmtk/nilm_metadata/tree/v0.2

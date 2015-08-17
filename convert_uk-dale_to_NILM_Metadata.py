@@ -6,6 +6,8 @@ from os.path import join, isfile, expanduser
 import pytz
 import yaml
 from collections import OrderedDict
+from StringIO import StringIO
+import pandas as pd
 
 RAW_UKPD_DATA_PATH = "/data/mine/vadeec/merged"
 OUTPUT_PATH = "."
@@ -13,6 +15,24 @@ OUTPUT_PATH = "."
 TIMEZONE = "Europe/London"
 TZ = pytz.timezone(TIMEZONE)
 N_BULDINGS = 5
+
+APPLIANCE_PARAMS_CSV = StringIO("""
+            max_power, on_power_threshold, min_on_duration, min_off_duration
+kettle,          3100,               2000,              12,                0
+fridge,           300,                 50,              60,               12
+washing machine, 2500,                 20,            1800,              160
+microwave,       3000,                200,              12,               30
+dish washer,     2500,                 10,            1800,             1800
+""")
+
+APPLIANCE_PARAMS = pd.read_csv(
+    APPLIANCE_PARAMS_CSV, index_col=0, skipinitialspace=True)
+
+APPLIANCE_SYNONYMS = {"fridge freezer": "fridge",
+                      "freezer": "fridge",
+                      "washer dryer": "washing machine"}
+
+ALL_APPLIANCES_WITH_PARAMS = list(APPLIANCE_PARAMS.index) + APPLIANCE_SYNONYMS.keys()
 
 dataset = {
     "name": "UK-DALE",
@@ -29,7 +49,7 @@ dataset = {
     ),
     (
         "Dataset is available for download from http://www.doc.ic.ac.uk/~dk3810/data/"
-    ), 
+    ),
     (
         "Dataset is also available from the UK Energy Research Council's"
         " Energy Data Centre: The 1-second data is available from"
@@ -39,10 +59,10 @@ dataset = {
         " but please note that this archive is updated less frequently than the"
         " data on www.doc.ic.ac.uk/~dk3810/data/"
     )
-    ], 
+    ],
     "creators": ["Kelly, Jack"],
     "contact": "jack.kelly@imperial.ac.uk",
-    "institution": "Imperial College London", 
+    "institution": "Imperial College London",
     "description": (
         "Appliance-by-appliance and whole-home power demand for 5 UK homes."
         " Appliance power demand was recorded once every 6 seconds."
@@ -52,15 +72,15 @@ dataset = {
     ),
     "number_of_buildings": N_BULDINGS,
     "geo_location": {
-        "country": "GB", 
+        "country": "GB",
         "locality": "London",
-        "latitude": 51.464462, 
+        "latitude": 51.464462,
         "longitude": -0.076544
-    }, 
+    },
     "timezone": TIMEZONE,
     "schema": "https://github.com/nilmtk/nilm_metadata/tree/v0.2",
     "funding": [
-        "Jack Kelly's PhD is funded by an EPSRC DTA", 
+        "Jack Kelly's PhD is funded by an EPSRC DTA",
         "Hardware necessary for this project was funded from"
         " Jack Kelly's Intel EU PhD Fellowship"],
     "rights_list": [{
@@ -79,13 +99,13 @@ building_metadata = {
             {"name": "kitchen", "floor": 0},
             {"name": "utility", "floor": 0},
             {"name": "dining room", "floor": 0},
-            {"name": "bedroom", "instance": 1, "floor": 1, 
+            {"name": "bedroom", "instance": 1, "floor": 1,
              "description": "master bedroom"},
-            {"name": "bedroom", "instance": 2, "floor": 1, 
+            {"name": "bedroom", "instance": 2, "floor": 1,
              "description": "kid's bedroom"},
-            {"name": "study", "instance": 1, "floor": 1, 
+            {"name": "study", "instance": 1, "floor": 1,
              "description": "occasionally used as a spare bedroom "},
-            {"name": "bathroom", "instance": 1, "floor": 1, 
+            {"name": "bathroom", "instance": 1, "floor": 1,
              "description": "shower + bath + toilet + sink + cupboards "
              "+ hot water tank + boiler + solar thermal pumping station"}
         ],
@@ -126,7 +146,8 @@ building_metadata = {
         "building_type": "flat",
         "ownership": "bought"
     }
-}
+}          
+
 
 appliances_for_each_building = {
     1: [
@@ -139,9 +160,9 @@ appliances_for_each_building = {
             'part_number': '41-311-71',
             'efficiency_rating': {'certification_name': 'SEDBUK', 'rating': 'A'},
             'nominal_consumption': {'on_power': 70},
-            'distributions': 
+            'distributions':
             {
-                'on_power': 
+                'on_power':
                 [
                     {'model': {'distribution_name': 'normal', 'mu': 73, 'sigma': 12}}
                 ]
@@ -1036,6 +1057,22 @@ appliances_for_each_building = {
     ]
 }
 
+
+for appliances in appliances_for_each_building.values():
+    for appliance in appliances:
+        if appliance['type'] in ALL_APPLIANCES_WITH_PARAMS:
+            appliance_type = appliance['type']
+            try:
+                appliance_type = APPLIANCE_SYNONYMS[appliance_type]
+            except KeyError:
+                pass
+
+            appliance_params = dict(APPLIANCE_PARAMS.loc[appliance_type])
+            appliance_params = {k: int(v) for k, v in
+                                appliance_params.iteritems()}
+            appliance.update(appliance_params)
+
+
 def load_labels(data_dir):
     """Loads data from labels.dat file.
 
@@ -1060,26 +1097,32 @@ def load_labels(data_dir):
 
     return labels
 
+
 def chan_for_label(target, labels):
     for chan, label in labels.iteritems():
         if label == target:
             return chan
     raise KeyError()
 
+
 def _line_to_datetime(line):
     timestamp = line.partition(" ")[0]
     return datetime.fromtimestamp(float(timestamp), tz=TZ)
+
 
 def end_time(filename):
     last_line = popen("tail -n 1 %s" % filename).read()
     return _line_to_datetime(last_line)
 
+
 def start_time(filename):
     first_line = popen("head -n 1 %s" % filename).read()
     return _line_to_datetime(first_line)
 
+
 def timeframe(start, end):
     return {'start': start.isoformat(), 'end': end.isoformat()}
+
 
 dataset_start = None
 dataset_end = None
@@ -1091,17 +1134,17 @@ for building_i in range(1, N_BULDINGS+1):
     building['original_name'] = original_building_name
     building_path = join(RAW_UKPD_DATA_PATH, original_building_name)
 
-    #--------- METERS -------------------------------
+    # --------- METERS -------------------------------
     labels = load_labels(building_path)
     building_start = None
     building_end = None
     building['elec_meters'] = {}
-    chans = labels.keys() 
-    chans.sort() # we want to process meters in order
+    chans = labels.keys()
+    chans.sort()  # we want to process meters in order
 
     # sound card power meter
     scpm_filename = join(building_path, 'mains.dat')
-    scpm_exists =  isfile(scpm_filename)
+    scpm_exists = isfile(scpm_filename)
     scpm_instance_number = chans[-1] + 1
 
     for chan in chans:
@@ -1115,7 +1158,7 @@ for building_i in range(1, N_BULDINGS+1):
             building_end = end
 
         meter = {
-            'data_location': 
+            'data_location':
                  'house_{:d}/channel_{:d}.dat'.format(building_i, chan),
             'timeframe': timeframe(start, end)
         }
@@ -1123,7 +1166,7 @@ for building_i in range(1, N_BULDINGS+1):
         if label == 'aggregate':
             meter.update({"site_meter": True,
                           'device_model': 'EcoManagerWholeHouseTx',
-                          'preprocessing_applied': 
+                          'preprocessing_applied':
                               {'clip': {'upper_limit': 20000}}})
             if scpm_exists:
                 meter.update({"disabled": True,
@@ -1131,7 +1174,7 @@ for building_i in range(1, N_BULDINGS+1):
         else:
             meter.update({"submeter_of": 0 if scpm_exists else 1,
                           'device_model': 'EcoManagerTxPlug',
-                          'preprocessing_applied': 
+                          'preprocessing_applied':
                               {'clip': {'upper_limit': 4000}}})
             if building_i == 1:
                 if label in ['boiler', 'solar_thermal_pump', 'lighting_circuit',
@@ -1139,14 +1182,14 @@ for building_i in range(1, N_BULDINGS+1):
                     meter.update({'device_model': 'CurrentCostTx'})
 
                 if label == 'kitchen_lights':
-                    meter.update({"submeter_of": 
+                    meter.update({"submeter_of":
                                   chan_for_label('lighting_circuit', labels)})
 
                 if label == 'toaster':
                     meter.update({'warning': 'For the five days from Mon 24th June 2013 to Fri 28th June we had someone staying at the house who occassionally swapped the toaster and kettle around (i.e. the toaster was plugged into the kettle sensor and visa-versa!) and also appeared to plug the hoover sensor into the kettle sensor (i.e. both the hoover and kettle sensor would have recorded the same appliance for a few hours).'})
 
         building['elec_meters'][chan] = meter
-        
+
     # Handle buildings with sound card power meters
     if scpm_exists:
         building['elec_meters'][scpm_instance_number] = {
@@ -1162,7 +1205,7 @@ for building_i in range(1, N_BULDINGS+1):
     if dataset_end is None or building_end > dataset_end:
         dataset_end = building_end
 
-    #------------ APPLIANCES --------------------
+    # ------------ APPLIANCES --------------------
     appliances = appliances_for_each_building[building_i]
 
     # infer meter IDs from original_name and labels.dat
@@ -1176,13 +1219,13 @@ for building_i in range(1, N_BULDINGS+1):
             instance = instances.setdefault(appliance_type, 1)
             appliance['instance'] = instance
             instances[appliance_type] += 1
-    
+
     building['appliances'] = appliances
     buildings[building_i] = building
-    
+
 dataset['timeframe'] = timeframe(dataset_start, dataset_end)
 dataset['date'] = dataset_end.date().isoformat()
-    
+
 with open(join(OUTPUT_PATH, 'dataset.yaml'), 'w') as fh:
     yaml.dump(dataset, fh)
 

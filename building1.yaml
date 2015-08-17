@@ -60,16 +60,24 @@ appliances:
 - brand: Aquarius
   instance: 1
   manufacturer: Hotpoint
+  max_power: 2500
   meters: [5]
+  min_off_duration: 160
+  min_on_duration: 1800
   model: WD420 1200 spin
+  on_power_threshold: 20
   original_name: washing_machine
   room: utility
   type: washer dryer
   year_of_purchase: 2007
 - instance: 1
   manufacturer: Whirlpool / Ikea
+  max_power: 2500
   meters: [6]
+  min_off_duration: 1800
+  min_on_duration: 1800
   model: DWH B10
+  on_power_threshold: 10
   original_name: dishwasher
   room: kitchen
   type: dish washer
@@ -99,10 +107,10 @@ appliances:
     the kitchen lights are used a lot.
   instance: 1
   main_room_light: true
-  room: kitchen
   meters: [8]
   nominal_consumption: {on_power: 100}
   original_name: kitchen_lights
+  room: kitchen
   subtype: ceiling downlight
   type: light
 - components:
@@ -138,7 +146,10 @@ appliances:
   year_of_purchase: 2008
 - dominant_appliance: true
   instance: 1
+  max_power: 3100
   meters: [10]
+  min_off_duration: 0
+  min_on_duration: 12
   on_power_threshold: 2000
   original_name: kettle
   room: kitchen
@@ -180,7 +191,10 @@ appliances:
   type: food processor
   year_of_purchase: 2009
 - instance: 1
+  max_power: 300
   meters: [12]
+  min_off_duration: 12
+  min_on_duration: 60
   on_power_threshold: 50
   original_name: fridge
   room: kitchen
@@ -188,8 +202,11 @@ appliances:
   type: fridge freezer
   year_of_purchase: 2010
 - instance: 1
+  max_power: 3000
   meters: [13]
-  on_power_threshold: 5
+  min_off_duration: 30
+  min_on_duration: 12
+  on_power_threshold: 200
   original_name: microwave
   room: kitchen
   type: microwave

@@ -26,7 +26,11 @@ appliances:
   original_name: server_hdd
   type: external hard disk
 - instance: 1
+  max_power: 3100
   meters: [8]
+  min_off_duration: 0
+  min_on_duration: 12
+  on_power_threshold: 2000
   original_name: kettle
   type: kettle
 - instance: 1
@@ -42,19 +46,35 @@ appliances:
   original_name: laptop2
   type: laptop computer
 - instance: 1
+  max_power: 2500
   meters: [12]
+  min_off_duration: 160
+  min_on_duration: 1800
+  on_power_threshold: 20
   original_name: washing_machine
   type: washing machine
 - instance: 1
+  max_power: 2500
   meters: [13]
+  min_off_duration: 1800
+  min_on_duration: 1800
+  on_power_threshold: 10
   original_name: dish_washer
   type: dish washer
 - instance: 1
+  max_power: 300
   meters: [14]
+  min_off_duration: 12
+  min_on_duration: 60
+  on_power_threshold: 50
   original_name: fridge
   type: fridge
 - instance: 1
+  max_power: 3000
   meters: [15]
+  min_off_duration: 30
+  min_on_duration: 12
+  on_power_threshold: 200
   original_name: microwave
   type: microwave
 - instance: 1

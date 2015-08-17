@@ -1,6 +1,10 @@
 appliances:
 - instance: 1
+  max_power: 3100
   meters: [2]
+  min_off_duration: 0
+  min_on_duration: 12
+  on_power_threshold: 2000
   original_name: kettle
   type: kettle
 - instance: 1

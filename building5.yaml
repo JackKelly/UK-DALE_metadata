@@ -79,11 +79,19 @@ appliances:
   original_name: sky_hd_box
   type: set top box
 - instance: 1
+  max_power: 3100
   meters: [18]
+  min_off_duration: 0
+  min_on_duration: 12
+  on_power_threshold: 2000
   original_name: kettle
   type: kettle
 - instance: 1
+  max_power: 300
   meters: [19]
+  min_off_duration: 12
+  min_on_duration: 60
+  on_power_threshold: 50
   original_name: fridge_freezer
   type: fridge freezer
 - instance: 1
@@ -95,15 +103,27 @@ appliances:
   original_name: electric_hob
   type: electric stove
 - instance: 1
+  max_power: 2500
   meters: [22]
+  min_off_duration: 1800
+  min_on_duration: 1800
+  on_power_threshold: 10
   original_name: dishwasher
   type: dish washer
 - instance: 1
+  max_power: 3000
   meters: [23]
+  min_off_duration: 30
+  min_on_duration: 12
+  on_power_threshold: 200
   original_name: microwave
   type: microwave
 - instance: 1
+  max_power: 2500
   meters: [24]
+  min_off_duration: 160
+  min_on_duration: 1800
+  on_power_threshold: 20
   original_name: washer_dryer
   type: washer dryer
 - instance: 1

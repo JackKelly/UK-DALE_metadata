@@ -18,7 +18,11 @@ appliances:
   original_name: tv_dvd_digibox_lamp
   type: light
 - instance: 1
+  max_power: 3100
   meters: [3]
+  min_off_duration: 0
+  min_on_duration: 12
+  on_power_threshold: 2000
   original_name: kettle_radio
   type: kettle
 - description: probably near the kettle
@@ -32,15 +36,27 @@ appliances:
   original_name: gas_boiler
   type: boiler
 - instance: 1
+  max_power: 300
   meters: [5]
+  min_off_duration: 12
+  min_on_duration: 60
+  on_power_threshold: 50
   original_name: freezer
   type: freezer
 - instance: 1
+  max_power: 2500
   meters: [6]
+  min_off_duration: 160
+  min_on_duration: 1800
+  on_power_threshold: 20
   original_name: washing_machine_microwave_breadmaker
   type: washing machine
 - instance: 1
+  max_power: 3000
   meters: [6]
+  min_off_duration: 30
+  min_on_duration: 12
+  on_power_threshold: 200
   original_name: washing_machine_microwave_breadmaker
   type: microwave
 - instance: 1
