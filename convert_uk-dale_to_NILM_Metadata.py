@@ -146,8 +146,7 @@ building_metadata = {
         "building_type": "flat",
         "ownership": "bought"
     }
-}          
-
+}
 
 appliances_for_each_building = {
     1: [
@@ -206,7 +205,7 @@ appliances_for_each_building = {
             'manufacturer': 'Lenovo',
             'original_name': 'laptop',
             'description': 'On loan from company for 3 months whilst doing a project with them.',
-            'dates_active': [{'start': '2014-07-14T00:00:00+01:00', 
+            'dates_active': [{'start': '2014-07-14T00:00:00+01:00',
                               'end': '2014-10-24T23:59:59+01:00'}],
         },
         {
@@ -216,7 +215,24 @@ appliances_for_each_building = {
             'manufacturer': 'Hotpoint',
             'brand': 'Aquarius',
             'model': 'WD420 1200 spin',
-            'room': 'utility'
+            'room': 'utility',
+            'dates_active': [{'end': '2015-09-08T00:00:00+01:00'}]
+        },
+        {
+            'type': 'washer dryer',
+            'original_name': 'washing_machine',
+            'year_of_purchase': 2015,
+            'manufacturer': 'Samsung',
+            'model': 'wf80f5e5u4x',
+            'description': 'F500 washing machine with ecobubble, 8 kg',
+            'efficiency_rating': {
+                'certification_name': 'SEDBUK',
+                'rating': 'A+++'
+            },
+            'nominal_consumption': {'energy_per_year': 157},
+            'model_url': 'http://www.samsung.com/uk/consumer/home-appliances/laundry/washing-machine/WF80F5E5U4X/EU',
+            'room': 'utility',
+            'dates_active': [{'start': '2015-09-08T00:00:01+01:00'}]
         },
         {
             'type': 'dish washer',
@@ -280,13 +296,13 @@ appliances_for_each_building = {
                     'type': 'incandescent lamp',
                     'subtype': 'halogen',
                     'count': 10,
-                    'nominal_consumption': { 'on_power': 50 }
+                    'nominal_consumption': {'on_power': 50}
                 },
                 {
                     'type': 'dimmer', 'subtype': 'TRIAC'
                 }
             ],
-            'nominal_consumption': { 'on_power': 500 },
+            'nominal_consumption': {'on_power': 500},
             'dates_active': [{'end': '2013-04-25T07:59:00+01:00'}],
             "description": "the old, inefficient kitchen ceiling lights.  After 2013-04-25 we used LED lamps. The kitchen receives very little natural light hence the kitchen lights are used a lot.   5th April 2013 1450 BST: replaced 1x50W halogen with 10W 12V Philips dimmable LED. 10th April 2013: replaced 1x50W halogen with 8W 12V MegaMan Dimmable LED. 25th April 2013 0800 BST: all 10 light fittings are now 10W 12V Philips dimmable LEDs."
         },
@@ -379,7 +395,7 @@ appliances_for_each_building = {
                 {
                     'type': 'audio amplifier',
                     'year_of_purchase': 2012,
-                    'components': [ {'type': 'DAC'} ]
+                    'components': [{'type': 'DAC'}]
                 },
                 {
                     'type': 'radio',
@@ -408,7 +424,17 @@ appliances_for_each_building = {
             'type': 'broadband router',
             'original_name': 'adsl_router',
             'room': 'hall',
-            'year_of_purchase': 2006
+            'year_of_purchase': 2006,
+            'dates_active': [{'end': '2016-01-20T12:00:00+00:00'}]
+        },
+        {
+            'type': 'broadband router',
+            'original_name': 'adsl_router',
+            'manufacturer': 'Virgin Media / Arris',
+            'model': 'Super Hub 3 / VMDG505 TG2492LG-VM',
+            'room': 'hall',
+            'year_of_purchase': 2016,
+            'dates_active': [{'start': '2016-01-20T12:00:01+00:00'}]
         },
         {
             'type': 'light',
@@ -417,7 +443,24 @@ appliances_for_each_building = {
             'room': 'lounge',
             'subtype': 'floor standing',
             'year_of_purchase': 2006,
-            'components': [{'type': 'compact fluorescent lamp'}]
+            'components': [{'type': 'compact fluorescent lamp'}],
+            'dates_active': [
+                {'end': '2015-06-07T07:00:01+01:00'},
+                {'start': '2015-06-07T19:00:01+01:00'}
+            ],
+            'description': 'bouncy castle pump plugged into this meter instead of lamp on 7th June 2015'
+        },
+        {
+            'type': 'bouncy castle pump',
+            'original_name': 'livingroom_s_lamp',
+            'room': 'outdoors',
+            'dates_active': [
+                {
+                    'start': '2015-06-07T07:01:01+01:00',
+                    'end': '2015-06-07T18:59:01+01:00'
+                }
+            ],
+            'description': 'bouncy castle pump plugged into this meter instead of lamp on 7th June 2015'
         },
         {
             'type': 'soldering iron',
@@ -759,16 +802,16 @@ appliances_for_each_building = {
             'description': 'Bathroom extractor fan (MVHR). On for most of the time during winter months (in summer we turn the fan off and open the window). Has 2 modes: trickle and boost.  Boost is triggered using a manual pull-cord when necessary. Only uses about 2 watts in trickle mode and about 10 watts in boost mode.',
             'meters': [0],
             'room': 'bathroom',
-            'year_of_purchase': 2012          
+            'year_of_purchase': 2012        
         },
         {
-            'type': 'drill', 
+            'type': 'drill',
             'description': 'Used: Sat 13/04/2013 17:43 BST for one short burst.  And other times, not logged.',
             'meters': [0],
             'year_of_purchase': 2009
         },
         {
-            'type': 'laptop computer', 
+            'type': 'laptop computer',
             'instance': 2,
             'manufacturer': 'Dell',
             'meters': [0],
