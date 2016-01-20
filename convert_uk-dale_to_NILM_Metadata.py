@@ -425,7 +425,7 @@ appliances_for_each_building = {
             'original_name': 'adsl_router',
             'room': 'hall',
             'year_of_purchase': 2006,
-            'dates_active': [{'end': '2016-01-20T12:00:00+00:00'}]
+            'dates_active': [{'end': '2016-01-20T11:30:19+00:00'}]
         },
         {
             'type': 'broadband router',
@@ -434,7 +434,7 @@ appliances_for_each_building = {
             'model': 'Super Hub 3 / VMDG505 TG2492LG-VM',
             'room': 'hall',
             'year_of_purchase': 2016,
-            'dates_active': [{'start': '2016-01-20T12:00:01+00:00'}]
+            'dates_active': [{'start': '2016-01-20T11:30:40+00:00'}]
         },
         {
             'type': 'light',
