@@ -58,6 +58,8 @@ appliances:
   original_name: laptop
   type: laptop computer
 - brand: Aquarius
+  dates_active:
+  - {end: '2015-09-08T00:00:00+01:00'}
   instance: 1
   manufacturer: Hotpoint
   max_power: 2500
@@ -70,6 +72,24 @@ appliances:
   room: utility
   type: washer dryer
   year_of_purchase: 2007
+- dates_active:
+  - {start: '2015-09-08T00:00:01+01:00'}
+  description: F500 washing machine with ecobubble, 8 kg
+  efficiency_rating: {certification_name: SEDBUK, rating: A+++}
+  instance: 2
+  manufacturer: Samsung
+  max_power: 2500
+  meters: [5]
+  min_off_duration: 160
+  min_on_duration: 1800
+  model: wf80f5e5u4x
+  model_url: http://www.samsung.com/uk/consumer/home-appliances/laundry/washing-machine/WF80F5E5U4X/EU
+  nominal_consumption: {energy_per_year: 157}
+  on_power_threshold: 20
+  original_name: washing_machine
+  room: utility
+  type: washer dryer
+  year_of_purchase: 2015
 - instance: 1
   manufacturer: Whirlpool / Ikea
   max_power: 2500
@@ -243,14 +263,31 @@ appliances:
   room: lounge
   type: audio amplifier
   year_of_purchase: 2004
-- instance: 1
+- dates_active:
+  - {end: '2016-01-20T11:30:19+00:00'}
+  instance: 1
   meters: [18]
   original_name: adsl_router
   room: hall
   type: broadband router
   year_of_purchase: 2006
+- dates_active:
+  - {start: '2016-01-20T11:30:40+00:00'}
+  instance: 2
+  manufacturer: Virgin Media / Arris
+  meters: [18]
+  model: Super Hub 3 / VMDG505 TG2492LG-VM
+  original_name: adsl_router
+  room: hall
+  type: broadband router
+  year_of_purchase: 2016
 - components:
   - {type: compact fluorescent lamp}
+  dates_active:
+  - {end: '2015-06-07T07:00:01+01:00'}
+  - {start: '2015-06-07T19:00:01+01:00'}
+  description: bouncy castle pump plugged into this meter instead of lamp on 7th June
+    2015
   instance: 3
   meters: [19]
   original_name: livingroom_s_lamp
@@ -258,6 +295,15 @@ appliances:
   subtype: floor standing
   type: light
   year_of_purchase: 2006
+- dates_active:
+  - {end: '2015-06-07T18:59:01+01:00', start: '2015-06-07T07:01:01+01:00'}
+  description: bouncy castle pump plugged into this meter instead of lamp on 7th June
+    2015
+  instance: 1
+  meters: [19]
+  original_name: livingroom_s_lamp
+  room: outdoors
+  type: bouncy castle pump
 - description: temperature controlled
   instance: 1
   manufacturer: Xytronic
@@ -635,77 +681,77 @@ elec_meters:
       clip: {upper_limit: 20000}
     site_meter: true
     submeter_of: 54
-    timeframe: {end: '2015-08-17T21:06:10+01:00', start: '2012-11-09T22:28:15+00:00'}
+    timeframe: {end: '2016-05-13T11:53:22+01:00', start: '2012-11-09T22:28:15+00:00'}
   2:
     data_location: house_1/channel_2.dat
     device_model: CurrentCostTx
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:06+01:00', start: '2012-11-09T22:28:23+00:00'}
+    timeframe: {end: '2016-05-13T11:57:46+01:00', start: '2012-11-09T22:28:23+00:00'}
   3:
     data_location: house_1/channel_3.dat
     device_model: CurrentCostTx
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:55+01:00', start: '2012-11-09T22:28:35+00:00'}
+    timeframe: {end: '2016-05-13T12:01:19+01:00', start: '2012-11-09T22:28:35+00:00'}
   4:
     data_location: house_1/channel_4.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:51+01:00', start: '2012-11-16T11:29:01+00:00'}
+    timeframe: {end: '2016-05-13T12:05:03+01:00', start: '2012-11-16T11:29:01+00:00'}
   5:
     data_location: house_1/channel_5.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:41+01:00', start: '2012-11-09T22:28:18+00:00'}
+    timeframe: {end: '2016-05-13T12:09:25+01:00', start: '2012-11-09T22:28:18+00:00'}
   6:
     data_location: house_1/channel_6.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:54+01:00', start: '2012-11-09T22:28:18+00:00'}
+    timeframe: {end: '2016-05-13T12:10:18+01:00', start: '2012-11-09T22:28:18+00:00'}
   7:
     data_location: house_1/channel_7.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:56+01:00', start: '2012-11-09T22:28:18+00:00'}
+    timeframe: {end: '2016-05-13T12:10:48+01:00', start: '2012-11-09T22:28:18+00:00'}
   8:
     data_location: house_1/channel_8.dat
     device_model: CurrentCostTx
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 25
-    timeframe: {end: '2015-08-17T21:10:06+01:00', start: '2012-11-12T18:24:46+00:00'}
+    timeframe: {end: '2016-05-13T12:11:23+01:00', start: '2012-11-12T18:24:46+00:00'}
   9:
     data_location: house_1/channel_9.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:10:13+01:00', start: '2012-12-14T22:21:32+00:00'}
+    timeframe: {end: '2016-05-13T12:11:37+01:00', start: '2012-12-14T22:21:32+00:00'}
   10:
     data_location: house_1/channel_10.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:15+01:00', start: '2012-11-09T22:28:18+00:00'}
+    timeframe: {end: '2016-05-13T11:53:50+01:00', start: '2012-11-09T22:28:18+00:00'}
   11:
     data_location: house_1/channel_11.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:22+01:00', start: '2012-12-14T22:21:32+00:00'}
+    timeframe: {end: '2016-05-13T11:54:20+01:00', start: '2012-12-14T22:21:32+00:00'}
     warning: For the five days from Mon 24th June 2013 to Fri 28th June we had someone
       staying at the house who occassionally swapped the toaster and kettle around
       (i.e. the toaster was plugged into the kettle sensor and visa-versa!) and also
@@ -717,56 +763,56 @@ elec_meters:
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:29+01:00', start: '2012-12-14T22:21:32+00:00'}
+    timeframe: {end: '2016-05-13T11:54:50+01:00', start: '2012-12-14T22:21:32+00:00'}
   13:
     data_location: house_1/channel_13.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:32+01:00', start: '2012-12-14T22:21:33+00:00'}
+    timeframe: {end: '2016-05-13T11:55:24+01:00', start: '2012-12-14T22:21:33+00:00'}
   14:
     data_location: house_1/channel_14.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:39+01:00', start: '2012-12-14T22:21:33+00:00'}
+    timeframe: {end: '2016-05-13T11:56:00+01:00', start: '2012-12-14T22:21:33+00:00'}
   15:
     data_location: house_1/channel_15.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:39+01:00', start: '2012-12-14T22:21:33+00:00'}
+    timeframe: {end: '2016-05-13T11:56:07+01:00', start: '2012-12-14T22:21:33+00:00'}
   16:
     data_location: house_1/channel_16.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-07-04T16:50:39+01:00', start: '2012-12-14T22:21:33+00:00'}
+    timeframe: {end: '2016-05-13T11:56:13+01:00', start: '2012-12-14T22:21:33+00:00'}
   17:
     data_location: house_1/channel_17.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:44+01:00', start: '2012-12-14T22:21:32+00:00'}
+    timeframe: {end: '2016-05-13T11:56:14+01:00', start: '2012-12-14T22:21:32+00:00'}
   18:
     data_location: house_1/channel_18.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:49+01:00', start: '2012-12-14T22:21:32+00:00'}
+    timeframe: {end: '2016-05-13T11:56:43+01:00', start: '2012-12-14T22:21:32+00:00'}
   19:
     data_location: house_1/channel_19.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:06:57+01:00', start: '2013-02-12T16:19:53+00:00'}
+    timeframe: {end: '2016-05-06T13:18:10+01:00', start: '2013-02-12T16:19:53+00:00'}
   20:
     data_location: house_1/channel_20.dat
     device_model: EcoManagerTxPlug
@@ -780,14 +826,14 @@ elec_meters:
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:10+01:00', start: '2013-02-12T16:19:53+00:00'}
+    timeframe: {end: '2016-05-13T11:58:18+01:00', start: '2013-02-12T16:19:53+00:00'}
   22:
     data_location: house_1/channel_22.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-06T10:52:55+01:00', start: '2013-02-14T20:57:12+00:00'}
+    timeframe: {end: '2016-05-11T17:58:54+01:00', start: '2013-02-14T20:57:12+00:00'}
   23:
     data_location: house_1/channel_23.dat
     device_model: EcoManagerTxPlug
@@ -801,42 +847,42 @@ elec_meters:
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:15+01:00', start: '2013-02-12T16:19:53+00:00'}
+    timeframe: {end: '2016-05-13T11:58:25+01:00', start: '2013-02-12T16:19:53+00:00'}
   25:
     data_location: house_1/channel_25.dat
     device_model: CurrentCostTx
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:23+01:00', start: '2013-03-12T10:59:44+00:00'}
+    timeframe: {end: '2016-05-13T11:58:58+01:00', start: '2013-03-12T10:59:44+00:00'}
   26:
     data_location: house_1/channel_26.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:24+01:00', start: '2013-03-12T11:53:48+00:00'}
+    timeframe: {end: '2016-05-13T11:59:31+01:00', start: '2013-03-12T11:53:48+00:00'}
   27:
     data_location: house_1/channel_27.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:37+01:00', start: '2013-03-12T11:53:48+00:00'}
+    timeframe: {end: '2016-04-27T20:06:34+01:00', start: '2013-03-12T11:53:48+00:00'}
   28:
     data_location: house_1/channel_28.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:40+01:00', start: '2013-03-12T11:53:50+00:00'}
+    timeframe: {end: '2016-05-13T12:00:19+01:00', start: '2013-03-12T11:53:50+00:00'}
   29:
     data_location: house_1/channel_29.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:45+01:00', start: '2013-03-12T11:53:51+00:00'}
+    timeframe: {end: '2016-05-13T12:00:51+01:00', start: '2013-03-12T11:53:51+00:00'}
   30:
     data_location: house_1/channel_30.dat
     device_model: EcoManagerTxPlug
@@ -850,166 +896,166 @@ elec_meters:
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:00+01:00', start: '2013-03-13T20:59:22+00:00'}
+    timeframe: {end: '2015-11-11T12:42:07+00:00', start: '2013-03-13T20:59:22+00:00'}
   32:
     data_location: house_1/channel_32.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:09+01:00', start: '2013-03-13T20:59:19+00:00'}
+    timeframe: {end: '2016-05-13T12:01:48+01:00', start: '2013-03-13T20:59:19+00:00'}
   33:
     data_location: house_1/channel_33.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:14+01:00', start: '2013-03-12T19:53:38+00:00'}
+    timeframe: {end: '2016-05-13T12:02:21+01:00', start: '2013-03-12T19:53:38+00:00'}
   34:
     data_location: house_1/channel_34.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:18+01:00', start: '2013-03-12T11:53:49+00:00'}
+    timeframe: {end: '2016-05-13T12:02:53+01:00', start: '2013-03-12T11:53:49+00:00'}
   35:
     data_location: house_1/channel_35.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:29+01:00', start: '2013-03-12T11:53:47+00:00'}
+    timeframe: {end: '2016-05-13T12:03:26+01:00', start: '2013-03-12T11:53:47+00:00'}
   36:
     data_location: house_1/channel_36.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:33+01:00', start: '2013-02-09T08:27:00+00:00'}
+    timeframe: {end: '2016-05-09T19:59:48+01:00', start: '2013-02-09T08:27:00+00:00'}
   37:
     data_location: house_1/channel_37.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:41+01:00', start: '2013-03-13T20:59:23+00:00'}
+    timeframe: {end: '2016-05-13T12:04:28+01:00', start: '2013-03-13T20:59:23+00:00'}
   38:
     data_location: house_1/channel_38.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:49+01:00', start: '2013-03-13T20:59:24+00:00'}
+    timeframe: {end: '2015-12-13T23:11:55+00:00', start: '2013-03-13T20:59:24+00:00'}
   39:
     data_location: house_1/channel_39.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-15T09:19:58+01:00', start: '2013-03-15T08:40:32+00:00'}
+    timeframe: {end: '2016-05-12T09:09:46+01:00', start: '2013-03-15T08:40:32+00:00'}
   40:
     data_location: house_1/channel_40.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-15T09:20:04+01:00', start: '2013-03-15T08:40:17+00:00'}
+    timeframe: {end: '2016-04-05T08:49:33+01:00', start: '2013-03-15T08:40:17+00:00'}
   41:
     data_location: house_1/channel_41.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-07-11T14:58:28+01:00', start: '2013-04-25T06:54:44+01:00'}
+    timeframe: {end: '2016-03-20T19:30:17+00:00', start: '2013-04-25T06:54:44+01:00'}
   42:
     data_location: house_1/channel_42.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:57+01:00', start: '2013-03-14T20:20:02+00:00'}
+    timeframe: {end: '2016-05-13T12:05:10+01:00', start: '2013-03-14T20:20:02+00:00'}
   43:
     data_location: house_1/channel_43.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:08:57+01:00', start: '2013-03-14T20:20:02+00:00'}
+    timeframe: {end: '2016-05-13T12:05:44+01:00', start: '2013-03-14T20:20:02+00:00'}
   44:
     data_location: house_1/channel_44.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:06+01:00', start: '2013-03-15T08:19:05+00:00'}
+    timeframe: {end: '2016-05-13T12:06:15+01:00', start: '2013-03-15T08:19:05+00:00'}
   45:
     data_location: house_1/channel_45.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:11+01:00', start: '2013-03-15T08:15:23+00:00'}
+    timeframe: {end: '2016-05-13T12:06:51+01:00', start: '2013-03-15T08:15:23+00:00'}
   46:
     data_location: house_1/channel_46.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:15+01:00', start: '2013-03-15T08:16:19+00:00'}
+    timeframe: {end: '2016-05-13T12:07:21+01:00', start: '2013-03-15T08:16:19+00:00'}
   47:
     data_location: house_1/channel_47.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:27+01:00', start: '2013-04-11T20:08:54+01:00'}
+    timeframe: {end: '2016-04-16T16:37:36+01:00', start: '2013-04-11T20:08:54+01:00'}
   48:
     data_location: house_1/channel_48.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:34+01:00', start: '2013-04-11T20:08:55+01:00'}
+    timeframe: {end: '2016-05-13T12:08:31+01:00', start: '2013-04-11T20:08:55+01:00'}
   49:
     data_location: house_1/channel_49.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:35+01:00', start: '2013-04-11T20:08:56+01:00'}
+    timeframe: {end: '2016-05-13T12:08:50+01:00', start: '2013-04-11T20:08:56+01:00'}
   50:
     data_location: house_1/channel_50.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:42+01:00', start: '2013-04-11T20:08:56+01:00'}
+    timeframe: {end: '2016-05-13T12:10:00+01:00', start: '2013-04-11T20:08:56+01:00'}
   51:
     data_location: house_1/channel_51.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:09:47+01:00', start: '2013-04-11T20:08:54+01:00'}
+    timeframe: {end: '2016-05-13T12:10:06+01:00', start: '2013-04-11T20:08:54+01:00'}
   52:
     data_location: house_1/channel_52.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-15T09:10:20+01:00', start: '2013-06-19T15:26:41+01:00'}
+    timeframe: {end: '2015-08-31T10:55:12+01:00', start: '2013-06-19T15:26:41+01:00'}
   53:
     data_location: house_1/channel_53.dat
     device_model: EcoManagerTxPlug
     preprocessing_applied:
       clip: {upper_limit: 4000}
     submeter_of: 0
-    timeframe: {end: '2015-08-17T21:07:09+01:00', start: '2013-10-22T15:40:57+01:00'}
+    timeframe: {end: '2016-05-13T11:58:11+01:00', start: '2013-10-22T15:40:57+01:00'}
   54:
     data_location: house_1/mains.dat
     device_model: SoundCardPowerMeter
     site_meter: true
-    timeframe: {end: '2015-08-17T21:13:28.400000+01:00', start: '2013-03-17T19:12:43.100000+00:00'}
+    timeframe: {end: '2016-05-13T12:12:15+01:00', start: '2013-03-17T19:12:43.100000+00:00'}
 energy_improvements: [solar thermal, loft insulation, solid wall insulation, double
     glazing]
 heating: [natural gas]
@@ -1029,4 +1075,4 @@ rooms:
 - {description: 'occasionally used as a spare bedroom ', floor: 1, instance: 1, name: study}
 - {description: shower + bath + toilet + sink + cupboards + hot water tank + boiler
     + solar thermal pumping station, floor: 1, instance: 1, name: bathroom}
-timeframe: {end: '2015-08-17T21:10:13+01:00', start: '2012-11-09T22:28:15+00:00'}
+timeframe: {end: '2016-05-13T12:11:37+01:00', start: '2012-11-09T22:28:15+00:00'}
