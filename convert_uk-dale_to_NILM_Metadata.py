@@ -656,7 +656,11 @@ appliances_for_each_building = {
             'type': 'hair straighteners',
             'original_name': 'straighteners',
             'room': 'bedroom,1',
-            'year_of_purchase': 2006
+            'year_of_purchase': 2006,
+            'model': 'ghd 4.2B',
+            'manufacturer': 'Jemella Limited',
+            'brand': 'ghd',
+            'portable': True
         },
         {
             'type': 'clothes iron',

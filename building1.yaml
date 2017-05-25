@@ -492,6 +492,10 @@ appliances:
   room: bedroom,1
   type: hair straighteners
   year_of_purchase: 2006
+  model: ghd 4.2B
+  manufacturer: Jemella Limited
+  brand: ghd
+  portable: true
 - instance: 1
   meters: [41]
   original_name: iron
